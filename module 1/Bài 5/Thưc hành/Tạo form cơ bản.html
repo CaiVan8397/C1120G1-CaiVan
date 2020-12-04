@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form cơ bản</title>
+</head>
+<body>
+<form action="simple.html" method="get" class="mine">
+<h1>ORDER FORM</h1>
+<br>
+What would you like to buy?
+<br>
+<select name="Chọn món">
+    <option value="PL">Phúc long latte</option>
+    <option value="TS">Sữa tươi</option>
+    <option value="HL">Trà đào</option>
+</select>
+<br><br>
+How many would you like to order?
+    <br>
+        <input type="radio" name="price" value=1-$10" checked>1-$10<br>
+        <input type="radio" name="price" value="2-$20">2-$20 <br>
+        <input type="radio" name="price" value="3-$30">3-$30 <br> <br>
+    Name <span style="color: red">*</span> <br>
+        <input type="text" name="First Name" value="first name">
+        <input type="text" name="Last name" value="last name">
+    <br> <br> <br>
+    Email<br>
+        <input type="text" name="Email">
+    <br><br>
+    Phone number <br><br>
+        <input type="text"name="sdt" style="width: 40px"> -
+        <input type="text"name="sdt"style="width: 40px"> -
+        <input type="text"name="sdt"style="width: 40px">
+        <br><br>
+    <input type="button" name="SM" value="Summit">
+    <style>
+        .mine{
+            font-family:"Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+    </style>
+</form>
+</body>
+</html>
