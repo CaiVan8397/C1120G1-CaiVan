@@ -1,0 +1,10 @@
+    table{
+        alignment:center;
+        border-collapse: collapse;
+}
+    th { ;
+        background-color: yellow;
+        font-style: border: 1px solid #000;
+        text-align: center;
+        width: 150px;
+    }
