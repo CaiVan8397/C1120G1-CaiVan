@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chu vi hình tròn</title>
+</head>
+<body>
+<p>Nhập bán kính hình tròn r= </p>
+<br><br>
+<input type="text" id="r">
+<br><br>
+<button onclick="chuvi()">Chu vi</button>
+<p id="cv"></p>
+<script>
+    const P=3.14159;
+    let a=document.getElementById("r");
+    let S;
+    function chuvi() {
+        a1=parseInt(a.value);
+        S=P*2*a1;
+        document.getElementById("cv").innerHTML= "Chuvi hinh tron là ="+S;
+
+    }
+</script>
+</body>
+</html>

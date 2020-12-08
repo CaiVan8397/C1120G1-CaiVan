@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh diem trung binh</title>
+</head>
+<body>
+<p>Nhập điểm toán</p>
+<br>
+<input type="text" id="toan">
+<p>Nhập điểm lý</p>
+<br>
+<input type="text" id="ly">
+<br>
+<p>Nhập điểm hóa</p>
+<input type="text" id="hoa">
+<br><br>
+<button onclick="tinhdiem()">Ketqua</button>
+<br>
+<p id="kq"></p>
+<script>
+    let a=(document.getElementById("toan"));
+    let b=(document.getElementById("ly"));
+    let c=(document.getElementById("hoa"));
+    let sum;
+    let avrage;
+    function tinhdiem() {
+        a1 = parseInt(a.value)
+        a2 = parseInt(b.value)
+        a3 = parseInt(c.value)
+
+    sum=a1+a2+a3;
+    avrage=sum/3;
+    document.getElementById("kq").innerHTML ="Tong diem = "+sum + "<br> average = "+ avrage;
+
+    }
+</script>
+</body>
+</html>

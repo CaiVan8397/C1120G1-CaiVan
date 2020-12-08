@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tròn</title>
+</head>
+<body>
+<p>Nhập bán kính hình tròn r= </p>
+<br><br>
+<input type="text" id="r">
+<br><br>
+<button onclick="dientich()">Dien tich</button>
+<p id="dt"></p>
+<script>
+        const P=3.14159;
+        let a=document.getElementById("r");
+        let S;
+        function dientich() {
+        a1=parseInt(a.value);
+        S=P*a1*a1;
+        document.getElementById("dt").innerHTML= "Dien tich hinh tron là ="+S;
+
+    }
+</script>
+</body>
+</html>

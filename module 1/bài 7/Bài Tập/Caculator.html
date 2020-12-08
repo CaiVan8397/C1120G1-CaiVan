@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+<h2>CACULATOR</h2>
+<input type="text" id="so1">
+<input type="text" id="so2">
+<br><br>
+<button onclick="add()">Addition(+)</button>
+<button onclick="subt()">Subtraction(-)</button>
+<button onclick="mul()">Multiplication(x)</button>
+<button onclick="div()">Division(:)</button>
+<br>
+<p id="kq"></p>
+<script>
+    let a=document.getElementById("so1");
+    let b=document.getElementById("so2");
+    let ad;
+    let su;
+    let mu;
+    let di;
+    function add() {
+        let x=parseInt(a.value);
+        let y=parseInt(b.value);
+        ad=x+y;
+        document.getElementById("kq").innerHTML= "Additionn = "+ad;
+    }
+    function subt() {
+        let x=parseInt(a.value);
+        let y=parseInt(b.value);
+        su=x-y;
+        document.getElementById("kq").innerHTML="Substraction = "+su;
+    }
+    function mul() {
+        let x=parseInt(a.value);
+        let y=parseInt(b.value);
+        mu=x*y;
+        document.getElementById("kq").innerHTML="Multiplication = "+mu;
+    }
+    function div() {
+        let x=parseInt(a.value);
+        let y=parseInt(b.value);
+        div=x/y;
+        document.getElementById("kq").innerHTML="division = "+div;
+    }
+</script>
+
+</body>
+</html>
