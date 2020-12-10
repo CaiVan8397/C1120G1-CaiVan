@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Money</title>
+</head>
+<body>
+<p>Nhap so phut goi</p>
+<input type="text" id="sophut">
+<p>Nhap so  giay</p>
+<input type="text" id="so giay">
+<button onclick="bill">Thanh tien</button>
+<p id="thanhtien"></p>
+<script>
+    let phut=parseFloat(document.getElementById('sophut').value);
+    let giay=parseFloat(document.getElementById('so giay').value);
+    let cuoc=0;
+    cuoc= phut*2000 + (phut/60)*2000;
+    document.getElementById('thanhtien').innerText= "Cuoc dt la: "+ cuoc +'VND';
+</script>
+</body>
+</html>

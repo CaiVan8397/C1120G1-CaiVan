@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim max</title>
+</head>
+<body>
+<p> Nhập số sản phẩm</p>
+<input type="text" id="sosp">
+<button onclick="check_num_sp()">Ket qua</button>
+<p id="kqua"></p>
+<script>
+    function check_num_sp() {
+        let num_spham = parseInt(document.getElementById("sosp").value);
+        let rose = 0;
+
+        if (num_spham < 100) {
+            rose = 0;
+        } else if (num_spham > 5000){
+            rose = 50;
+        } else {
+            rose = 25;
+        }
+        document.getElementById("kqua").innerText = "Bạn nhận được " + rose + "% hoa hồng khi bán được " + num_spham + " sản phẩm";
+    }
+</script>
+</body>

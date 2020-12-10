@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CALCULATOR</title>
+</head>
+<body>
+<table border="1" cellspacing="20" cellpadding="0">
+    <tr>
+        <td colspan="4" style="height: 50px"><span id="ketQua"></span></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculator('1')">1</button></td>
+        <td><button onclick="calculator('2')">2</button></td>
+        <td><button onclick="calculator('3')">3</button></td>
+        <td><button onclick="calculator('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculator('4')">4</button></td>
+        <td><button onclick="calculator('5')">5</button></td>
+        <td><button onclick="calculator('6')">6</button></td>
+        <td><button onclick="calculator('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculator('7')">7</button></td>
+        <td><button onclick="calculator('8')">8</button></td>
+        <td><button onclick="calculator('9')">9</button></td>
+        <td><button onclick="calculator('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculator('C')">C</button></td>
+        <td><button onclick="calculator('0')">0</button></td>
+        <td><button onclick="calculator('=')">=</button></td>
+        <td><button onclick="calculator('/')">/</button></td>
+    </tr>
+   <script>
+       function calculator(opera) {
+            let result=document.getElementById("ketQua").innerText;
+        switch (opera) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                result=result+opera;
+                break;
+            case '=':
+                result=eval(result);
+                break;
+            case 'C':
+                result='';
+                break;
+        }
+        document.getElementById('ketQua').innerText=result;
+       }
+   </script>
+</table>
+</body>
+</html>

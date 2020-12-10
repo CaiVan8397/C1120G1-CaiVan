@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click</title>
+</head>
+<body>
+<img src="picture/Pic1.jpg" id="myimg" style="width: 20%"> <br><br>
+<p>Click button below to move the image to right</p> <br>
+<button onclick="moveright()" >Click me</button>
+<script>
+    let imgObj= null;
+    function init() {
+        imgObj= document.getElementById("myimg");
+        imgObj.style.position="relative";
+        imgObj.style.left="0px";
+    }
+    function moveright() {
+        imgObj.style.left=parseInt(imgObj.style.left)+20+ "px";
+    }
+    window.onload=init();
+</script>
+</body>
+</html>

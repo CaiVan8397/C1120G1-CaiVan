@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kiemtramieng = parseFloat(prompt('Nhap diem kiem tra mieng');
+    let diem_giuaki = parseFloat(prompt("Nhap diem giua ki");
+    let diem_cuoiki = parseFloat(prompt("num_cuoiki");
+    let diemtrungbinh = 0;
+    let ktm=kiemtramieng.value;
+    let dgk=diem_giuaki.value;
+    let dck=diem_cuoiki.value;
+    diemtrungbinh = (ktm + dgk* 2 + dck * 3) / 6;
+    console.log(diemtrungbinh);
+    if (diemtrungbinh > 5) {
+    if (diemtrungbinh > 8) {
+    alert('gioi');
+    } else {
+    alert('kha');
+    }
+    } else {
+   alert('yeu');
+    }
+</script>
+</body>
+</html>
