@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    let k;
+    do {
+        k = parseInt(prompt('nhap so so nguyen to muon hien thi'));
+    } while (k<1);
+    let count = 0;  // đếm số nguyên tố hiển thị
+    let number=2;
+    while ( count < k) {
+        let count_num=0; //đêm số ước
+        for (let i=1;i<=number;i++){
+            if (number%i===0){
+                count_num++;
+            } }
+        if (count_num===2){
+            document.write(number+' ');
+            count++;
+            }
+
+        number++;
+}
+</script>
+</body>
+</html>

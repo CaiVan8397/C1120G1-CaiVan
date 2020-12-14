@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+</head>
+<body>
+<script>
+    do {
+        var money = parseInt(prompt("Nhap so tien ban muon gui "));
+    } while (money < 0);
+    do {
+        var month = parseInt(
+            prompt("Nhap so thang muon gui tiet kiem ")
+        );
+    } while (month < 0);
+    let money_lai;
+    for (let i=1; i<=month; i++){
+        if (i<=6) {
+            money_lai = money * 0.005;
+        } else if (i<=7){
+            money_lai=money*0.007;
+        } else if (i<=12){
+            money_lai=money*0.009;
+        } else if (i<=18){
+            money_lai=money*0.012;
+        }else if (i>=24){
+            money_lai=money*0,015;
+        }
+        money+=money_lai;
+    }
+    alert('so tien cua ban la ' + money);
+</script>
+</body>
+</html>

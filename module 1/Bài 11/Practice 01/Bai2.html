@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temprature</title>
+</head>
+<body>
+<script>
+    let check=false;
+    do {
+    let temprature=parseFloat(prompt('Nhap nhiet do '))
+    if (temprature<=100 && temprature>=20) {
+        alert('nhiet do ok');
+        check=true;
+    } else if (temprature<20){
+        alert('tang nhiet do');
+    }else if (temprature>100){
+        alert('giam nhiet do')
+    }
+    } while (check)
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Bai 3:Hiển thị ra k số trong dãy fibonacci đầu tiên.
+    let a=0;
+    let b=1;
+    let total;
+    let k=parseInt(prompt('nhap so so hang muon hien thi '));
+    document.write(a+ ' ');
+    document.write(b+ ' ');
+    for (let i=1; i<=(k-2); i++){
+        total= a+b;
+        a=b;
+        b=total;
+        document.write(total+ ' ')
+    }
+    //Bai4:Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    let a=0;
+    let b=1;
+    let sum;
+    while (sum%5===0){
+        sum=a+b;
+        a=b;
+        b=sum;
+    }
+    document.write(b)
+    //Bài 5:  Tính tổng của k số đầu tiên trong dãy fibonacci.
+    let a=0;
+    let b=1;
+    let total;
+    let sum;
+    let k=parseInt(prompt('nhap so so hang muon tinh tong '));
+    for (let i=1; i<=(k-2); i++){
+        total= a+b;
+        sum+=total;
+        a=b;
+        b=total;}
+        document.write(sum); */
+
+    //Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong
+    let a=0;
+    let b=1;
+    let total;
+    let sum=0;
+    let i=0;
+    let k=parseInt(prompt('nhap so so hang chia het cho 7 muon tinh tong '));
+    do {
+        total= a+b;
+        a=b;
+        b=total;
+        if (total%7===0){
+            document.write(total+' ')
+            sum+=total;
+            i++;}
+    } while (i!==k);
+    document.write(sum);
+</script>
+</body>
+</html>

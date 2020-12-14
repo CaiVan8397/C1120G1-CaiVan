@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let k=parseInt(prompt('nhap so luong so muon in trong day'));
+let a=0;
+let b=1;
+let total=0;
+document.write(a+" ");
+document.write(b+" ");
+for (let i=1; i<=k-2; i++) {
+    total = a + b;
+    a=b;
+    b=total;
+    document.write(total + " ");
+}
+</script>
+</body>
+</html>
