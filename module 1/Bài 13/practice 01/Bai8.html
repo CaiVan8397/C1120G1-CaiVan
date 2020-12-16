@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    let  a=[];
+    for (let i=0; i<10; i++) {
+        a[i] = prompt('nhap so thu ' + i);
+    }
+    document.write('Mang a da nhap gom: ' + a + "<br>");
+    a.sort(function (a,b) {return(b-a)});
+    document.write('sap xep gia tri giam dan trong mang a:' + a);
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau
+    //let a=['dog','cat','elephant','ant','mouse'];
+   // console.log(a.join());
+
+    //Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn
+    /*let x=prompt('Input');
+    let array = [];
+    for (let i = 0; i < x.length; i++) {
+        array[i] = parseInt(x[i]);
+    }
+    for (let i = 0; i < array.length; i++){
+        if (array[i]%2===0 && array[i+1]%2===0){
+            array.splice(i+1,0,'-');
+        }
+    }
+    document.write(array.join(' ')); */
+//Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa
+    let x=prompt('Input');
+    let array=[];
+    for (let i=0; i<x.length; i++){
+        array[i]=x[i];
+    }
+    for (let i=0; i<array.length; i++){
+        if (array[i]===array[i].toUpperCase()){
+            array[i]=array[i].toLowerCase();
+        } else {
+            array[i]=array[i].toUpperCase();
+        }
+    }
+    alert(array.join(''));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+    let a=[];
+    let index;
+    for (let i=0; i<10; i++) {
+        a[i] = prompt('nhap so thu ' + i);
+    }
+    document.write('mang a gom: '+ a +'<br><br>');
+    let flg=true;
+    let v=prompt('Nhap so nguyen v: ');
+    for (i=0; i<10; i++){
+        if ((a[i])===v){
+            flg=false;
+            break;
+        }
+    }
+    if (flg===false){
+        index =a.indexOf(v);
+        a.splice(index,1);
+        a.push(0);
+        document.write('mang a bien hoa thanh: ' + a);
+    } else{
+        document.write(v + 'k thuoc mang a');
+    }
+</script>
+</body>
+</html>

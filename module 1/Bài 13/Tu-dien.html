@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let vocab=prompt('Vocab search: ');
+    let dictionary=['cat','dog','egg','vocano','sun','moon','heart'];
+    let mean=['mèo','chó','trứng','bơ','mặt trời','trăng','tim'];
+    let check=true;
+    for (let i=0; i<dictionary.length; i++){
+        if (vocab===dictionary[i]){
+            check=false;
+            break;
+        }
+    }
+    dictionary[i]=mean[i];
+    if (check===false) {
+        alert(vocab + ': ' + mean[i]);
+    } else {
+        alert('can not search');
+    }
+</script>
+</body>
+</html>

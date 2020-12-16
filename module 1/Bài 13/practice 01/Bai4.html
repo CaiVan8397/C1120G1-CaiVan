@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    let k=parseInt(prompt('Nhap so phan tu cua mang'));
+    let a=[];
+    for (let i=0; i<k; i++){
+        a[i]=prompt('Nhap so thu '+i)
+    }
+    document.write('Mang a gom: ' + a);
+    document.write('<br>');
+    let index_first=0;
+    let index_last=a.length-1;
+    let x;
+    while (index_first<index_last){
+        x=a[index_first];
+        a[index_first]=a[index_last];
+        a[index_last]=x;
+        index_first++;
+        index_last--;
+    }
+    document.write('Mang dao nguoc cua a la: '+a);
+</script>
+</body>
+</html>
