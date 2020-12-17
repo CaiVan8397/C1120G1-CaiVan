@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function checkmin(arr) {
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                arr[i] = min;
+            }
+        }
+        return min;
+    }
+    let arr1= [7, 12, 6, 9, 20, 56, 89]
+    document.write(checkmin(arr1));
+</script>
 </body>
 </html>

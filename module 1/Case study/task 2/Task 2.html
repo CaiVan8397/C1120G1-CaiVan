@@ -1,10 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+        let full_name = "Cai Van";
+        let id_number = "10099009881";
+        let day_of_birth = "2000-03-08";
+        let email = "123.org@mail.com";
+        let address = "K1 Nguyen Huu Tho";
+        let province = "Đà Nẵng";
+        let type_of_customer = "platinum"
+        let number_people = "2";
+        let rent_days = "5";
+        let discount = '10'
+        let service = "Villa (500$/day)";
+        let room_type = "Normal";
+        let totalPay;
+
+        let choose = parseInt(prompt("1. Thông tin khách hàng" + "\n" +
+            "2. CHỉnh sửa thông tin" + "\n" +
+            "3. Giá thành sau giảm" + "\n"));
+        switch (choose) {
+            case 1:
+                alert("1. Customer Name : " + full_name + "\n" +
+                    "2. Customer Identify : " + id_number + "\n" +
+                    "3. Day Of Birth : " + day_of_birth + "\n" +
+                    "4. Customer Email : " + email + "\n" +
+                    "5. Address : " + address + "\n" +
+                    "6. Province : " + province + "\n" +
+                    "7. Customer type : " + type_of_customer + "\n" +
+                    "8. Discount: " + discount + " %" + "\n" +
+                    "9. People_number :" + number_people + "\n" +
+                    "10. Rent day : " + rent_days + "\n" +
+                    "11. Service : " + service + "\n")
+                break;
+            case 2:
+                let edit = parseInt(prompt("1. Customer Name : " + full_name + "\n" +
+                    "2. Customer Identify : " + id_number + "\n" +
+                    "3. Day Of Birth : " + day_of_birth + "\n" +
+                    "4. Customer Email : " + email + "\n" +
+                    "5. Address : " + address + "\n" +
+                    "6. Province : " + province + "\n" +
+                    "7. Room Type : " + room_type + "\n" +
+                    "8. Discount: " + discount + " %" + "\n" +
+                    "9. People_number :" + number_people + "\n" +
+                    "10. Rent day : " + rent_days + "\n" +
+                    "11. Service : " + service + "\n"));
+
+                switch (edit) {
+                    case 1:
+                        full_name = prompt("Enter name");
+                        break;
+                    case 2:
+                        id_number = prompt("Enter id number");
+                        break;
+                    case 3:
+                        day_of_birth = prompt('Enter birthday');
+                        break;
+                    case 4:
+                        email = prompt('Enter email');
+                        break;
+                    case 5:
+                        address = prompt('Enter address');
+                        break;
+                    case 6:
+                        province = prompt('Enter address');
+                        break;
+                    case 7:
+                        room_type = prompt('Select type room');
+                        break;
+                    case 8:
+                        discount = prompt('Enter discount');
+                        break;
+                    case 9:
+                        number_people = prompt('Enter number');
+                        break;
+                    case 10:
+                        rent_days = prompt('Enter rent day');
+                        break;
+                    case 11:
+                        service = prompt('Enter service');
+                        break;
+                    default:
+                        alert('Failed');
+                }
+                break;
+
+            default:
+                alert('sfrrhrt');
+            break;
+        }
+                alert("1. Customer Name : " + full_name + "\n" +
+                    "2. Customer Identify : " + id_number + "\n" +
+                    "3. Day Of Birth : " + day_of_birth + "\n" +
+                    "4. Customer Email : " + email + "\n" +
+                    "5. Address : " + address + "\n" +
+                    "6. Province : " + province + "\n" +
+                    "7. Customer type : " + type_of_customer + "\n" +
+                    "8. Discount: " + discount + " %" + "\n" +
+                    "9. People_number :" + number_people + "\n" +
+                    "10. Rent day : " + rent_days + "\n" +
+                    "11. Service : " + service + "\n" +
+                    "12. Room type : " + room_type);
+    </script>
+    </body>
+    </html>

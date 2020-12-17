@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id='input'>
+<button onclick="add_element()" id="add_element">Add</button>
+<button onclick="dis_element()">Display</button>
+<hr>
+<div id="kqua"></div>
+<script>
+    let a=[];
+    let i=0;
+    function add_element() {
+        a[i]=document.getElementById('input').value;
+        i++;
+        document.getElementById('input').value=''; // gán lại rỗng để reset chỗ nhập
+
+    }
+    function dis_element() {
+        let e= "<br/>";
+        let j=0;
+        for (; j<a.length; j++) {
+            e+= "Element " + j + " = " + a[j] + "<br/>";
+        }
+        document.getElementById('kqua').innerHTML = e;
+    }
+
+
+</script>
 </body>
 </html>
