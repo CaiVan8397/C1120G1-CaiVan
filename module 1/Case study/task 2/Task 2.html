@@ -18,7 +18,59 @@
         let discount = '10'
         let service = "Villa (500$/day)";
         let room_type = "Normal";
-        let totalPay;
+
+
+        let payout;
+        let sv;
+        let discount_by_day_amount;
+        let discount_by_roomtype;
+        let discount_by_province;
+
+        switch (service) {
+            case "Villa (500$/day)": sv = 500;
+                break;
+            case "House (300$/day)": sv = 300;
+                break;
+            case "Room (100$/day)": sv = 100;
+                break;
+            default: alert("Failed");
+                break;
+        }
+        if (rent_days <= 4) {
+            discount_by_day_amount = 10;
+        } else if (rent_days <= 7) {
+            discount_by_day_amount = 20;
+        } else {
+            discount_by_day_amount = 30;
+        }
+
+        switch (province) {
+            case "Đà Nẵng": discount_by_province = 20;
+                break;
+            case "Huế": discount_by_province = 10;
+                break;
+            case "Quảng Nam": discount_by_province = 5;
+                break;
+            default: discount_by_province = 0;
+                break;
+        }
+
+        switch (room_type) {
+            case "Diamond": discount_by_roomtype = 15;
+                break;
+            case "Platinum": discount_by_roomtype = 10;
+                break;
+            case "Gold": discount_by_roomtype = 5;
+                break;
+            case "Silver": discount_by_roomtype = 2;
+                break;
+            case "Member": discount_by_roomtype = 0;
+                break;
+            default : alert("Failed");
+                break;
+        }
+        discount = (discount_by_roomtype + discount_by_day_amount + discount_by_province); //tổng số tiền discount
+        let flag = true;
 
         let choose = parseInt(prompt("1. Thông tin khách hàng" + "\n" +
             "2. CHỉnh sửa thông tin" + "\n" +
@@ -86,25 +138,28 @@
                         break;
                     default:
                         alert('Failed');
+                        break;
                 }
+                        alert("1. Customer Name : " + full_name + "\n" +
+                            "2. Customer Identify : " + id_number + "\n" +
+                            "3. Day Of Birth : " + day_of_birth + "\n" +
+                            "4. Customer Email : " + email + "\n" +
+                            "5. Address : " + address + "\n" +
+                            "6. Province : " + province + "\n" +
+                            "7. Customer type : " + type_of_customer + "\n" +
+                            "8. Discount: " + discount + " %" + "\n" +
+                            "9. People_number :" + number_people + "\n" +
+                            "10. Rent day : " + rent_days + "\n" +
+                            "11. Service : " + service + "\n" +
+                            "12. Room type : " + room_type);
+            case 3:
+                payout = rent_days * sv - discount;
+                alert("Giá thành sau giảm : " + payout.toFixed(2) + " $");
                 break;
-
             default:
-                alert('sfrrhrt');
-            break;
+                alert('Moi ban nhap lai');
+                break;
         }
-                alert("1. Customer Name : " + full_name + "\n" +
-                    "2. Customer Identify : " + id_number + "\n" +
-                    "3. Day Of Birth : " + day_of_birth + "\n" +
-                    "4. Customer Email : " + email + "\n" +
-                    "5. Address : " + address + "\n" +
-                    "6. Province : " + province + "\n" +
-                    "7. Customer type : " + type_of_customer + "\n" +
-                    "8. Discount: " + discount + " %" + "\n" +
-                    "9. People_number :" + number_people + "\n" +
-                    "10. Rent day : " + rent_days + "\n" +
-                    "11. Service : " + service + "\n" +
-                    "12. Room type : " + room_type);
     </script>
     </body>
     </html>
