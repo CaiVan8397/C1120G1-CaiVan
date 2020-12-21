@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    //[Bài tập] Hàm kiểm tra số nguyên tố
+    function isPrime(numbercheck) {
+        let count = 0; // đếm ước
+        for (let i = 1; i <= numbercheck; i++) {
+            if (numbercheck % i === 0){
+                count++;
+            }
+        }
+        if (count === 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (isPrime(31)) {
+        alert('This is a prime number');
+    } else
+        alert('This is not a prime numbber');
+
+</script>
 </body>
 </html>

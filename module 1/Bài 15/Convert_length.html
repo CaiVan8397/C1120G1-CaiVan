@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h3>Length Converter</h3>
+<form>
+    <p>
+        <label>Meter</label>
+        <input id="inputMet" type="number" placeholder="Meter"
+               oninput="lengthConverter(this.value)"
+               onchange="lengthConverter(this.value)">
+    </p>
+    <p>Feet: <span id="outputFeet"></span></p>
+</form>
+
+<script>
+
+    function lengthConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputFeet").innerHTML = valNum*3.279;
+    }
+
+
+</script>
 </body>
 </html>

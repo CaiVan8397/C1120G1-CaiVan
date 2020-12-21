@@ -7,16 +7,23 @@
 <body>
 <!-- Hàm sẽ nhận tham số đầu vào là giá trị cần chuyển đổi. Thực hiện chuyển đổi từ độ F sang C theo công thức C = (F– 32) /1.8 -->
 <h3>Temperature Converter</h3>
-<h5>Type a value in the Fahrenheit field  to convert the value in the Celcius</h5>
-<input id="valueF" type="number">
-<button onclick=convertFtoC(this.value)>Convert</button>
-<br><br>
-<p id="result">Celcius</p>
+<form>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+               oninput="temperatureConverter(this.value)"
+               onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+</form>
+
 <script>
-    function convertFtoC(tempF) {
-        tempF=parseFloat(tempF);
-        document.getElementById('result').innerHTML = ((tempF-32)/1.8);
+
+    function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
     }
+
 </script>
 </body>
 </html>

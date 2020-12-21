@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    function findMin(a,b,c) {
+        let min = a;
+        if (a<b){
+            if (a<c) {
+                a = min;
+            } else {
+                c= min;
+            }
+        } else {
+            if (b<c){
+                b= min;
+            } else {
+                c = min;
+            }
+        }
+        alert('so be nhat la' + min);
+    }
+    let num =findMin(7,8,9);
+</script>
+</body>
+</html>

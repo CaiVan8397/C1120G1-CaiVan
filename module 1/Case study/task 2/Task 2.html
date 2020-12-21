@@ -33,8 +33,6 @@
                 break;
             case "Room (100$/day)": sv = 100;
                 break;
-            default: alert("Failed");
-                break;
         }
         if (rent_days <= 4) {
             discount_by_day_amount = 10;
@@ -66,11 +64,8 @@
                 break;
             case "Member": discount_by_roomtype = 0;
                 break;
-            default : alert("Failed");
-                break;
         }
-        discount = (discount_by_roomtype + discount_by_day_amount + discount_by_province); //tổng số tiền discount
-        let flag = true;
+        discount = parseInt(discount_by_roomtype + discount_by_day_amount + discount_by_province); //tổng số tiền discount
 
         let choose = parseInt(prompt("1. Thông tin khách hàng" + "\n" +
             "2. CHỉnh sửa thông tin" + "\n" +
@@ -152,8 +147,9 @@
                             "10. Rent day : " + rent_days + "\n" +
                             "11. Service : " + service + "\n" +
                             "12. Room type : " + room_type);
+                break;
             case 3:
-                payout = rent_days * sv - discount;
+                payout = parseInt(rent_days * sv - discount);
                 alert("Giá thành sau giảm : " + payout.toFixed(2) + " $");
                 break;
             default:

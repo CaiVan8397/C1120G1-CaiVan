@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<!-- Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số. -->
+<button onclick="minmax()">Click me</button>
+<script>
+    function minmax(a,b) {
+        if (a>b){
+            return (a + ' lon hon ' +b);
+        } else {
+            return ('tong la' + (a+b));
+        }
+    }
+   alert(minmax(6,7));
+</script>
 </body>
 </html>

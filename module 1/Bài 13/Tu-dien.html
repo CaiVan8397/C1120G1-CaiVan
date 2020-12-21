@@ -5,8 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let vocab=prompt('Vocab search: ');
+    <!--let vocab=prompt('Vocab search: ');
     let dictionary=['cat','dog','egg','vocano','sun','moon','heart'];
     let mean=['mèo','chó','trứng','bơ','mặt trời','trăng','tim'];
     let check=true;
@@ -21,6 +20,27 @@
         alert(vocab + ': ' + mean[i]);
     } else {
         alert('can not search');
+    } -->
+    <input
+    type="text"
+    id="input_text"
+    placeholder="Nhập từ tiếng Anh"
+        />
+        <button onclick="find()">Dò</button>
+        <p><b>Kết quả:</b><span id="output_text"></span></p>
+    <script>
+    function find() {
+        let eng = ["go", "run", "jump", "sit"];
+        let vi = ["đi", "chạy", "nhảy", "ngồi"];
+        let input_text = document.getElementById("input_text").value;
+        let result = [];
+
+        for (let index = 0; index < vi.length; index++) {
+            if (input_text === eng[index]) {
+                result += vi[index];
+            }
+        }
+        document.getElementById("output_text").innerText = result;
     }
 </script>
 </body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="spmoi" value="Ten san pham">
+<input type="button" id="themSp" value="Them san pham" >
+<p> Tong so luong san pham</p>
+
+<script>
+    let dsSanpham = ["Nokia","Sam Sum", "LG", "Motorala"]
+    let bangChuoi = "<table>\n" +
+        "    <tr>\n" +
+        "        <th> STT</th>\n" +
+        "        <th>Ten san pham</th>\n" +
+        "        <th>Sua</th>\n" +
+        "        <th>Xoa</th>\n" +
+        "    </tr>" ;
+    for (let i=0; i<=dsSanpham.length; i++){
+        bangChuoi +=  "    <tr>\n" +
+            "        <th>" + (i+1)+ "</th>\n" +
+            "        <th>" + dsSanpham[i] + "</th>\n" +
+            "        <th><button onclick='editSP()' value='Sua'></button> </th>\n" +
+            "        <th><button onclick='delSP()' value='Xoa'></button> </th>\n" +
+            "    </tr>" ;
+    }
+    function editSP() {
+
+    }
+
+
+
+</script>
+</body>
+</html>

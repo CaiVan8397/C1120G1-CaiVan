@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"
+    let k=parseInt(prompt('Nhap so phan tu cua mang'));
+    let a=[];
+    for (let i=0; i<k; i++){
+        a[i]=prompt('Nhap so thu '+i)
+    }
+    alert('Mang a gom: ' + a);
+    a= a.reverse();
+    alert("Mang a dao nguoc la :" + a.join(""));
+</script>
+</body>
+</html>
