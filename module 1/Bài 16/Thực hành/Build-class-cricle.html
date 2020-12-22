@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Cricle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+        getRadius(radius){
+            return this.radius;
+        }
+        getArea(radius){
+            return Math.PI*this.radius*this.radius;
+        }
+    }
+    let a = new Cricle(2);
+    let radius = a.getRadius();
+    let Area = a.getArea();
+    document.write("radius: " + radius + "; area: " + Area);
+</script>
+</body>
+</html>

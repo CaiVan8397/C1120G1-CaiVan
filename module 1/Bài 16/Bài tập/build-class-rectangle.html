@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border: 1px solid blue;"></canvas>
+<script>
+
+    class HCN{
+        constructor(cd,cr) {
+            this.cd = cd;
+            this.cr = cr;
+        }
+        getC(cd,cr){
+            return ("Chu vi = " + 2*(this.cd+this.cr));
+        }
+        getS(cd,cr){
+            return ("Dien tich = "+ this.cr*this.cd);
+        }
+        getDraw() {
+            let c = document.getElementById("myCanvas");
+            let ctx =c.getContext ("2d");
+            ctx.rect (100,100 ,this.cd, this.cr);
+            ctx.stroke();
+            ctx.fillStyle= "#FF0000";
+            ctx.fill();
+        }
+    }
+    let hcn = new HCN(20,15);
+    hcn.getDraw();
+    document.write(hcn.getS());
+    document.write(hcn.getC());
+</script>
+</body>
+</html>

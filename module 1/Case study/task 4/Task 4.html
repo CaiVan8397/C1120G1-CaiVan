@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = [];
+    while (true) {
+        let menuchoose = parseInt(prompt("Menu\n\n"+
+            "1. Add Name Customer\n" +
+            "2. Delete Customer\n" +
+            "x. Exit\n"));
+        switch (menuchoose) {
+            case 1: {
+                let num = parseInt(prompt("Enter number customer you want to add: "));
+                for (let i = 0; i < num; i++) {
+                    let nameCustomer = prompt("Enter name of customer " + (i + 1));
+                    arrNameCustomer.push(nameCustomer);
+                }
+                let display = "";
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    display += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                }
+                alert(display);
+                break;
+            }
+            case 2:{
+                let check = false;
+                let nameCustomer = prompt("Enter name customer you want to delete");
+                for (let i=0; i< arrNameCustomer.length; i++){
+                    if (arrNameCustomer[i] === nameCustomer){
+                        arrNameCustomer.splice(i,1);
+                        check=true;
+                    }
+                }
+                if (!check){
+                    alert("Name customer you want to delete doesn't have in display");
+                }
+                let display = "";
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    display += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                }
+                alert(display);
+                break;
+            }
+            case "x": {
+                check = false;
+                break;
+            }
+            default: {
+                alert("OPPS!!! CHECK AGAIN");
+            }
+        }
+    }
+</script>
+</body>
+</html>

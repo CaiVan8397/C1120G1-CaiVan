@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="color: cornflowerblue"></div>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #dddddd"></canvas>
+    <script>
+        let canvasObj = document.getElementById("myCanvas");
+        let context = canvasObj.getContext("2d");
+        context.arc(300, 300, 150, 0, 2 * Math.PI);
+        context.stroke();
+        context.fillStyle = "pink";
+        context.fill();
+    </script>
+</body>
+</html>
