@@ -8,9 +8,62 @@
 <script>
     class Battery {
         constructor(energy) {
+            this.energy= energy;
+        }
+        setEnergy (energy){
+            this.energy = energy;
+        }
+        getEnergy(){
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if (this.energy>0){
+                this.energy--;
+            }
         }
     }
-    class flashlamp
+    class FlashLamp{
+        constructor(status,battery) {
+            this.status = status;
+            this.battery = battery;
+        }
+        setBattery(battery){
+            return this.battery;
+        }
+        getBatteryInfo(){
+            return this.battery.getEnergy();
+        }
+        light(){
+            if (this.status){
+                alert("Lighting");
+            } else {
+                alert("Tunr off");
+            }
+        }
+        turnon(){
+            this.status = true;
+        }
+        turnoff(){
+            this.status = false;
+        }
+    }
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.light();
+
+    document.write("Turn on<br/>")
+    flashLamp.turnon();
+    flashLamp.light();
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+
+    document.write("Turn off<br/>")
+    flashLamp.turnoff();
+    flashLamp.light();
 </script>
 </body>
 </html>
