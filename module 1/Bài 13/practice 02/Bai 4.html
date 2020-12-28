@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-//Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+    //Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
     let k=parseInt(prompt('Nhap so phan tu cua mang'));
     let a=[];
     let count =0;
@@ -15,11 +15,11 @@
     }
     document.write('Mang a gom: ' + a + "</br>");
     for (let i=0; i<k; i++){
-        if(!isNaN(a[i])){
+        if(isNaN(a[i])){
             count++;
         }
     }
-    document.write("So ki tu so cua mang la " + count);
+    document.write("So tu co trong mang la " + count);
 </script>
 </body>
 </html>

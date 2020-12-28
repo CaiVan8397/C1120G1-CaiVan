@@ -35,9 +35,9 @@
         let input_text = document.getElementById("input_text").value;
         let result = [];
 
-        for (let index = 0; index < vi.length; index++) {
-            if (input_text === eng[index]) {
-                result += vi[index];
+        for (let i = 0; i < vi.length; i++) {
+            if (input_text === eng[i]) {
+                result += vi[i];
             }
         }
         document.getElementById("output_text").innerText = result;

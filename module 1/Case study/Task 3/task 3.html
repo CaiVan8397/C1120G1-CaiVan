@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let fullName;
+    let idNumber;
+    let birthDay;
+    let address;
+    let province;
+    let customerType;
+    let numberPeople;
+    let rentDays;
+    let service;
+    let roomType;
+
+
+    fullName = checkName(prompt("New customer name: "));
+
+    do {
+        idNumber = prompt("Your id number: ");
+        if (!checkIdNumber(idNumber)){
+            alert("It is not id number, type again:")
+        }
+    } while (!checkIdNumber(idNumber))
+
+
+    do {
+        birthDay = prompt("Your birthday (dd/mm/yyyy): ");
+        if (!checkBirthday(birthDay)){
+            alert("Pls, check your format birthday is right !!!")
+        }
+    } while (!checkBirthday(birthDay))
+
+   do {
+       email = prompt("Your email (abc@xyz.nml): ");
+       if (!checkEmail(email)){
+           alert("Pls, check your format email is right !!!")
+       }
+   }  while (!checkEmail(email))
+
+    address = prompt("Your address: ");
+
+    province = prompt("Your province");
+
+    customerType = prompt("Choose type of customer (Diamond, Platinum, Gold, Silver, Member): ");
+
+    do {
+        numberPeople = prompt("How many people go with you? ");
+        if (!checkNumber(numberPeople)){
+            alert("Check your number people go with you again !!")
+        }
+    } while (!checkNumber(numberPeople))
+
+    do {
+        rentDays = prompt("How many days you want to rent? ");
+        if (!checkNumber(rentDays)){
+            alert("Check days number you want to rent!!! ");
+        }
+    } while (!checkNumber(rentDays));
+
+    service = prompt("Choose service (Villa, House, Room): ");
+
+    roomType = prompt("Choose type of room (Vip, Business, Normal): ");
+
+    alert("Information customer:" + "\n"+
+        "1. Customer name: " + fullName  + "\n" +
+        "2. ID number: " + idNumber + "\n" +
+        "3. Day of birth: " + birthDay + "\n" +
+        "4. Email: " + email + "\n" +
+        "5. Address: " + address+ "n" +
+        "6. Province: " + province + "\n" +
+        "7. Type of customer: " + customerType + "\n" +
+        "8. People number " + numberPeople + "\n" +
+        "9. Rent day: " + rentDays + "\n" +
+        "10. Type of service: " + service + "\n" +
+        "11. Type of room: " + roomType );
+
+    function checkName(fullName) {
+        let name = fullName.trim().toLowerCase().split("");
+        for (let i = name.length - 2; i > 0; i--) {
+            if (name[i] === " " && name[i - 1] === " ") {
+                name.splice(i, 1);
+            }
+        }
+        name[0] = name[0].toUpperCase();
+        for (let i = 1; i < name.length - 1; i++) {
+            if (name[i] === " ") {
+                name[i + 1] = name[i + 1].toUpperCase();
+            }
+        }
+        return name.join("");
+    }
+
+    function checkIdNumber(idNumber) {
+        if (idNumber.length !== 9) {
+            return false;
+        }
+        for (let i = 0; i < idNumber.length; i++) {
+            if (isNaN(idNumber[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function checkBirthday(birthDay) {
+        if (birthDay.length !==10){
+            return false
+        }
+        if (birthDay.charAt(2) === "/" && birthDay.charAt(5) === "/" && birthDay.substring(0,1) <= 31 && birthDay.substring(3,4) <= 12 && birthDay.substring(6,10) <= 2020 && birthDay.substring(6,10)>=1900) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function checkEmail(email) {
+        let countAt = 0;
+        let countDoc = 0;
+        for (let i = 0; i <= email.length; i++) {
+            if (email.charAt(i) === '@') {
+                countAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt !== 1 || countDoc < 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkNumber(number) {
+        if (!Number.isInteger(number) && parseInt(number) <= 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

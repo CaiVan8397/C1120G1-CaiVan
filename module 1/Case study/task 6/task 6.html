@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(fullName, idNumber, dayOfBirth, email, address, service, province, typeOfCustomer,
+                    numberPeople, rentDays, roomType, discount) {
+            this.fullName = fullName;
+            this.idNumber = idNumber;
+            this.dayOfBirth = dayOfBirth;
+            this.email = email;
+            this.address = address;
+            this.service = service;
+            this.province = province;
+            this.typeOfCustomer = typeOfCustomer;
+            this.numberPeolpe = numberPeople;
+            this.rentDays = rentDays;
+            this.roomType = roomType;
+            this.discount = discount;
+            this.totalPay();
+        }
+        getFullName() {
+            return this.fullName;
+        }
+        setFullName(fullName) {
+            this.fullName = fullName;
+        }
+        getIdNumber(){
+            return this.idNumber;
+        }
+        setIdnumber (idNumber){
+            this.idnumber = idNumber;
+        }
+        getDayOfBirth (){
+            return this.dayOfBirth;
+        }
+        setDayOfBirth (dayOfBirth){
+            this.dayOfBirth = dayOfBirth;
+        }
+        getEmail(){
+            return this.email;
+        }
+        setEmail (email){
+            this.email = email;
+        }
+        getAddress(){
+            return this.address;
+        }
+        setAddress (address){
+            this.address = address;
+        }
+        getService () {
+            return this.service ;
+        }
+        setService (service){
+            this.service = service;
+        }
+        getProvince () {
+            return this.province;
+        }
+        setProvince (province){
+            this.province = province;
+        }
+        getTypeOfCustomer () {
+            return this.typeOfCustomer;
+        }
+        setTypeOfCustomer (typeOfCustomer) {
+            this.typeOfCustomer = typeOfCustomer;
+        }
+        getNumberPeople () {
+            return this.numberPeolpe;
+        }
+        setNumberPeople (numberPeople){
+            this.numberPeolpe = numberPeople
+        }
+        getRentDays() {
+            return this.rentDays;
+        }
+        setRentDays (rentDays) {
+            this.rentDays = rentDays;
+        }
+        getRoomType(){
+            return this.roomType;
+        }
+        setRoomType (roomType) {
+            this.roomType = roomType;
+        }
+        getDiscount () {
+            return this.discount;
+        }
+        setDiscount (discount) {
+            this.discount = discount;
+        }
+
+        totalPay (){
+            let bill = 0;
+            if (this.service === "Villa"){
+                bill = 500*this.rentdays*(1-this.discount/100);
+            } else if ( this.service === "House") {
+                bill = 300*this.rentdays*(1-this.discount/100);
+            } else  if (this.service === "Room") {
+                bill = 100*this.rentdays*(1-this.discount/100);
+            }
+            return bill;
+        }
+    }
+
+    class Employee {
+        constructor(emName,emId,emBirthDay,emPhone,emEmail,emPosition) {
+            this.emName = emName;
+            this.emId = emId;
+            this.emBirthDay = emBirthDay;
+            this.emPhone = emPhone;
+            this.emEmail = emEmail;
+            this.emPosition = emPosition;
+
+        }
+        setEmName(emName){
+            this.emName = emName;
+        }
+        getEmName(){
+            return this.emName;
+        }
+        setEmId(emId){
+            this.emId = emId;
+        }
+        getEmId(){
+            return this.emId;
+        }
+        setEmDob(emBirthDay){
+            this.emBirthDay = emBirthDay;
+        }
+        getEmBirthDay(){
+            return this.emBirthDay;
+        }
+        setEmPhone(emPhone){
+            this.emPhone = emPhone;
+        }
+        getEmPhone(){
+            return this.emPhone;
+        }
+        setEmEmail(emEmail){
+            this.emEmail = emEmail;
+        }
+        getEmEmail(){
+            return this.emEmail;
+        }
+        setEmPosition(emPosition){
+            this.emPosition = emPosition;
+        }
+        getEmPosition(){
+            return this.emPosition;
+        }
+        Salary() {
+            let salary;
+            switch (this.emPosition) {
+                case "Manager":
+                    salary = 500;
+                    break;
+                case "Sale":
+                    salary = 300;
+                    break;
+                case "Marketing":
+                    salary = 200;
+                    break;
+            }
+            return salary;
+        }
+    }
+
+    let listCustomer = [];
+    let listEmployee = [];
+    function addNewEmployee () {
+        let emName,emId,emBirthDay,emPhone,emEmail,emPosition;
+        emName = checkName(prompt("New employee name: "))
+        do {
+            emId = prompt("Your id number: ");
+            if (!checkIdNumber(emId)){
+                alert("It is not id number, type again:")
+            }
+        } while (!checkIdNumber(emId))
+        do {
+            emBirthDay = prompt("Your birthday (dd/mm/yyyy): ");
+            if (!checkBirthday(emBirthDay)){
+                alert("Pls, check your format birthday is right !!!")
+            }
+        } while (!checkBirthday(emBirthDay))
+        emPhone = prompt("Your phone number:");
+        do {
+            emEmail = prompt("Your email (abc@xyz.nml): ");
+            if (!checkEmail(emEmail)){
+                alert("Pls, check your format email is right !!!")
+            }
+        }  while (!checkEmail(emEmail))
+
+        do {
+            flag = true;
+        let input = prompt("Select Employee's Position : \n" +
+            "1. Manager\n" +
+            "2. Sale\n" +
+            "3. Marketing")
+        switch (input) {
+            case '1':
+                emPosition = "Manager";
+                break;
+            case '2':
+                emPosition = "Sale";
+                break;
+            case '3':
+                emPosition = "Marketing";
+                break;
+            default:
+                alert("Failed!");
+                flag= false;
+        }
+    } while (!flag);
+        alert("You've added a new Employee successfully!!");
+        let employee = new Employee(emName,emId,emBirthDay,emPhone,emEmail,emPosition);
+        listEmployee.push(employee);
+    }
+
+    function displayOneEm(i) {
+        let info =  "1. Employee Name : " + listEmployee[i].getEmName() + "\n" +
+            "2. Employee Identify : " + listEmployee[i].getEmId() + "\n" +
+            "3. Day Of Birth : " + listEmployee[i].getEmBirthDay() + "\n" +
+            "4. Employee Phone : " + listEmployee[i].getEmPhone() + "\n" +
+            "5. Employee Email : " + listEmployee[i].getEmEmail() + "\n" +
+            "6. Position : " + listEmployee[i].getEmPosition();
+        return info;
+    }
+    function displayEmployee() {
+        for (let i = 0; i < listEmployee.length; i++) {
+            alert(displayOneEm(i));
+     }
+
+    function displaySalary() {
+        let flag = true;
+        let name = prompt("Enter Name of Employee you wanna show Salary");
+        for (let i = 0; i < listEmployee.length; i++) {
+            for (let j = 0; j < listEmployee[i].length; j++) {
+                if (name === listEmployee[i].getEmName()) {
+                    index = i;
+                    flag= false;
+                }
+            }
+            if (flag === false) {
+                alert("Employee "+ listEmployee[index].getEmName()+" has salary is "
+                    +listEmployee[index].getSalary() + "$");
+            }
+        }
+    }
+
+    function addNewCustomer() {
+        let fullName, idNumber, birthDay, email, address, province, customerType, numberPeople, rentDays,
+            service, roomType, discount;
+
+        fullName = checkName(prompt("New customer name: "));
+
+        do {
+            idNumber = prompt("Your id number: ");
+            if (!checkIdNumber(idNumber)){
+                alert("It is not id number, type again:")
+            }
+        } while (!checkIdNumber(idNumber))
+
+        do {
+            birthDay = prompt("Your birthday (dd/mm/yyyy): ");
+            if (!checkBirthday(birthDay)){
+                alert("Pls, check your format birthday is right !!!")
+            }
+        } while (!checkBirthday(birthDay))
+
+        do {
+            email = prompt("Your email (abc@xyz.nml): ");
+            if (!checkEmail(email)){
+                alert("Pls, check your format email is right !!!")
+            }
+        }  while (!checkEmail(email))
+
+        address = prompt("Your address: ");
+
+        province = prompt("Your province");
+
+        customerType = prompt("Choose type of customer (Diamond, Platinum, Gold, Silver, Member): ");
+
+        do {
+            numberPeople = prompt("How many people go with you? ");
+            if (!checkNumber(numberPeople)){
+                alert("Check your number people go with you again !!")
+            }
+        } while (!checkNumber(numberPeople))
+
+        do {
+            rentDays = prompt("How many days you want to rent? ");
+            if (!checkNumber(rentDays)){
+                alert("Check days number you want to rent!!! ");
+            }
+        } while (!checkNumber(rentDays));
+
+        service = prompt("Choose service (Villa, House, Room): ");
+
+        roomType = prompt("Choose type of room (Vip, Business, Normal): ");
+
+        do {
+            discount = prompt("Amount discount:");
+            if (!checkNumber(discount)){
+                alert("Check discount again!!!");
+            }
+        } while (!checkNumber(discount))
+
+        let customer = new Customer(fullName, idNumber, birthDay, email, address, service, province,
+            customerType, numberPeople, rentDays, roomType, discount);
+        listCustomer.push(customer);
+    }
+
+    // Function check kiểu dữ liệu:
+    function checkName(fullName) {
+        let name = fullName.trim().toLowerCase().split("");
+        for (let i = name.length - 2; i > 0; i--) {
+            if (name[i] === " " && name[i - 1] === " ") {
+                name.splice(i, 1);
+            }
+        }
+        name[0] = name[0].toUpperCase();
+        for (let i = 1; i < name.length - 1; i++) {
+            if (name[i] === " ") {
+                name[i + 1] = name[i + 1].toUpperCase();
+            }
+        }
+        return name.join("");
+    }
+
+    function checkIdNumber(idNumber) {
+        if (idNumber.length !== 9) {
+            return false;
+        }
+        for (let i = 0; i < idNumber.length; i++) {
+            if (isNaN(idNumber[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function checkBirthday(birthDay) {
+        if (birthDay.length !==10){
+            return false
+        }
+        if (birthDay.charAt(2) === "/" && birthDay.charAt(5) === "/" && birthDay.substring(0,1) <= 31 && birthDay.substring(3,4) <= 12 && birthDay.substring(6,10) <= 2020 && birthDay.substring(6,10)>=1900) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function checkEmail(email) {
+        let countAt = 0;
+        let countDoc = 0;
+        for (let i = 0; i <= email.length; i++) {
+            if (email.charAt(i) === '@') {
+                countAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt !== 1 || countDoc < 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkNumber(number) {
+        if (!Number.isInteger(number) && parseInt(number) <= 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function displayOne(i) {
+        let info = "Information customer " + (i+1) + ":" + "\n"+
+            "1. Customer name: " + listCustomer[i].getFullName()  + "\n" +
+            "2. ID number: " + listCustomer[i].getIdNumber() + "\n" +
+            "3. Day of birth: " + listCustomer[i].getDayOfBirth() + "\n" +
+            "4. Email: " + listCustomer[i].getEmail() + "\n" +
+            "5. Address: " + listCustomer[i].getAddress()+ "n" +
+            "6. Province: " + listCustomer[i].getProvince() + "\n" +
+            "7. Type of customer: " + listCustomer[i].getTypeOfCustomer() + "\n" +
+            "8. People number " + listCustomer[i].getNumberPeople() + "\n" +
+            "9. Rent day: " + listCustomer[i].getRentDays() + "\n" +
+            "10. Type of service: " + listCustomer[i].getService() + "\n" +
+            "11. Type of room: " + listCustomer[i].getRoomType() + "\n" +
+            "12. Discount: " + listCustomer[i].getDiscount();
+        return info;
+    }
+    function displayCustomer() {
+        for (let i=0; i < listCustomer.length; i++){
+            alert(displayOne(i));
+        }
+    }
+    let index;
+    function displayTotalPay() {
+        check = false;
+        let cusName = prompt("Select customer name you want to see total pay: ");
+        for (let i=0; i < listCustomer.length; i++) {
+            for (let j = 0; j > listCustomer[i].length; j++) {
+                if (cusName === listCustomer[i].getFullName()) {
+                    index = i;
+                    check = true;
+                }
+            }
+            if (check===true) {
+                alert("Total pay of customer " + listCustomer[index].getFullName()
+                    + ": " + listCustomer[index].totalPay() + "$");
+            }
+        }
+    }
+
+    function editInfoCustomer() {
+        let fullName, idNumber, birthDay, email, address, province, customerType, numberPeople, rentDays,
+            service, roomType, discount;
+        let cusChoose = "List customer: \n"
+        for (let i=0; i < listCustomer.length; i++){
+            cusChoose += (i+1) +"." + listCustomer[i].getFullName() + "\n"
+        }
+        let customerWantEdit = prompt(cusChoose + "Who is customer you want to edit ? ");
+        for (let i = 0; i < listCustomer.length; i++) {
+            if (customerWantEdit === listCustomer[i].getFullName()) {
+                index = i;
+            }
+        }
+        let choose = parseInt(prompt("Select the property you want to edit:\n" +
+            "1. Full name\n" +
+            "2. Id card number\n" +
+            "3. Date of birth\n" +
+            "4. Email\n" +
+            "5. Province\n" +
+            "6. Address\n" +
+            "7. Customer type\n" +
+            "8. Number of people included\n" +
+            "9. Number of rent days\n" +
+            "10. Service type\n" +
+            "11. Room type\n" +
+            "12. Discount"));
+        switch (choose) {
+            case 1:
+                fullName = checkName(prompt("New customer name: "));
+                listCustomer[index].setFullName(fullName);
+                break;
+            case 2:
+                do {
+                    idNumber = prompt("Your id number: ");
+                    if (!checkIdNumber(idNumber)){
+                        alert("It is not id number, type again:")
+                    }
+                } while (!checkIdNumber(idNumber))
+                listCustomer[index].setIdnumber(idNumber);
+                break;
+            case 3:
+                do {
+                    birthDay = prompt("Your birthday (dd/mm/yyyy): ");
+                    if (!checkBirthday(birthDay)){
+                        alert("Pls, check your format birthday is right !!!")
+                    }
+                } while (!checkBirthday(birthDay))
+                listCustomer[index].setDayOfBirth(birthDay);
+                break;
+            case 4:
+                do {
+                    email = prompt("Your email (abc@xyz.nml): ");
+                    if (!checkEmail(email)){
+                        alert("Pls, check your format email is right !!!")
+                    }
+                }  while (!checkEmail(email))
+                listCustomer[index].setEmail(email);
+                break;
+            case 5:
+                province = prompt("Your province");
+                listCustomer[index].setProvince(province);
+                break;
+            case 6:
+                address = prompt("Your address: ");
+                listCustomer[index].setAddress(address);
+                break;
+            case 7:
+                customerType = prompt("Choose type of customer (Diamond, Platinum, Gold, Silver, Member): ");
+                listCustomer[index].setTypeOfCustomer(customerType)
+                break;
+            case 8:
+                do {
+                    numberPeople = prompt("How many people go with you? ");
+                    if (!checkNumber(numberPeople)){
+                        alert("Check your number people go with you again !!")
+                    }
+                } while (!checkNumber(numberPeople))
+                listCustomer[index].setNumberPeople(numberPeople);
+                break;
+            case 9:
+                do {
+                    rentDays = prompt("How many days you want to rent? ");
+                    if (!checkNumber(rentDays)){
+                        alert("Check days number you want to rent!!! ");
+                    }
+                } while (!checkNumber(rentDays));
+                listCustomer[index].setRentDays(rentDays);
+                break;
+            case 10:
+                service = prompt("Choose service (Villa, House, Room): ");
+                listCustomer[index].setService(service);
+                break;
+            case 11:
+                roomType = prompt("Choose type of room (Vip, Business, Normal): ");
+                listCustomer[index].setRoomType(roomType);
+                break;
+            case 12:
+                do {
+                    discount = prompt("Amount discount:");
+                    if (!checkNumber(discount)){
+                        alert("Check discount again!!!");
+                    }
+                } while (!checkNumber(discount))
+                listCustomer[index].setDiscount(discount);
+                break;
+        }
+        displayOne(index);
+    }
+
+    function deleteCustomer() {
+        let cusChoose = "List customer: \n"
+        for (let i=0; i < listCustomer.length; i++){
+            cusChoose += (i+1) +"." + listCustomer[i].getFullName() + "\n"
+        }
+        let customerWantDelete = prompt(cusChoose + "Who is customer you want to delete ? ");
+        for (let i = 0; i < listCustomer.length; i++) {
+            if (customerWantDelete === listCustomer[i].getFullName()) {
+                index = i;
+            }
+        }
+        listCustomer.splice(index,1);
+    }
+
+    function displayMainMenu() {
+        let check = true;
+        while (check) {
+            let mainMenuChoose = parseInt(prompt("Welcome to website of Furama Resort: \n" +
+                "1. Customers Management\n" +
+                "2. Employees Management\n" +
+                "3. Exit"));
+            switch (mainMenuChoose) {
+                case 1:
+                    displayCusMenu();
+                    break;
+                case 2:
+                    displayEmMenu();
+                    break;
+                case 3:
+                    alert("Please select an option from menu!");
+                    check = false;
+                    break;
+            }
+        }
+    }
+
+
+        function displayCusMenu() {
+            let check = true;
+            while (check) {
+                menuChoose = parseInt(prompt("Menu\n\n" +
+                    "1. Add New Customer\n" +
+                    "2. Display Information Customer\n" +
+                    "3. Display total pay of customer \n" +
+                    "4. Edit Information Customer\n" +
+                    "5. Delete Customer\n" +
+                    "6. Return\n" +
+                    "7. Exit"));
+                switch (menuChoose) {
+                    case 1:
+                        addNewCustomer();
+                        break;
+                    case 2:
+                        if (listCustomer.length > 0) {
+                            displayCustomer();
+                        } else {
+                            alert("Pls choose 1 to add new customer !!!");
+                        }
+                        break;
+                    case 3:
+                        if (listCustomer.length > 0) {
+                            displayTotalPay();
+                        } else {
+                            alert("Pls choose 1 to add new customer !!!");
+                        }
+                        break;
+
+                    case 4:
+                        if (listCustomer.length >0) {
+                            editInfoCustomer();
+                        } else {
+                            alert("Pls choose 1 to add new customer !!!");
+                        }
+                        break;
+
+                    case 5:
+                            //     deleteCustomer();
+                            // } else {
+                            //     alert("Pls choose 1 to add new customer !!!");
+                            // }
+                        break;
+
+                    case 6:
+                        displayMainMenu();
+                        break;
+
+                    case 7:
+                        check = false;
+                        break;
+                }
+            }
+        }
+
+        function displayEmMenu() {
+            let check = true;
+            while (check) {
+                let menuChoose = parseInt(prompt("Welcome to Employees Management Application\n" +
+                    "1. Add new employee\n" +
+                    "2. Display employee information\n" +
+                    "3. Display salary of employee\n" +
+                    "4. Return\n" +
+                    "5. Exit"));
+                switch (menuChoose) {
+                    case 1:
+                        addNewEmployee();
+                        break;
+
+                    case 2:
+                        if(listEmployee.length >0) {
+                            displayEmployee();
+                        } else {
+                            alert("Pls choose 1 to add new employee !!!");
+                        }
+                        break;
+
+                    case 3:
+                        if(listEmployee.length >0) {
+                            displaySalary();
+                        } else {
+                            alert("Pls choose 1 to add new employee !!!");
+                        }
+                        break;
+
+                    case 4:
+                        displayMainMenu();
+                        break;
+
+                    case 5:
+                        check = false;
+                        break;
+                }
+            }
+        }
+
+    displayMainMenu();
+</script>
+</body>
+</html>
