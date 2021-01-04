@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Product {
+        constructor(idProduct, nameProduct, whereProduction, price) {
+            this.idProduct = idProduct;
+            this.nameProduct = nameProduct;
+            this.whereProduction = whereProduction;
+            this.price = price;
+        }
+        getIdProduct(){
+            return this.idProduct;
+        }
+        setIdProduct(idProduct){
+            this.idProduct = idProduct;
+        }
+        getNameProduct(){
+            return this.nameProduct;
+        }
+        setNameProduce(nameProduct){
+            this.nameProduct = nameProduct;
+        }
+        getWhereProduction(){
+            return this.whereProduction;
+        }
+        setWhereProduction(whereProduction){
+            this.whereProduction = whereProduction;
+        }
+        getPrice(){
+            return this.price;
+        }
+        setPrice(price){
+            this.price = price;
+        }
+        toString(){
+            document.write("Information of produce:" + "<br>" +
+                "1. Code of product: " + this.getIdProduct() + "<br>"+
+                "2. Name of product: " + this.getNameProduct() + "<br>"+
+                "3. Where production: " + this.getWhereProduction() + "<br>"+
+                "4. Price :" + this.getPrice());
+        }
+    }
+    let pro = new Product("a1234","Bear","LG",20000);
+    console.log(pro.toString());
+</script>
+</body>
+</html>

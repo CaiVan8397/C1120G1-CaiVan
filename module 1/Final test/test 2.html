@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     function checkStr() {
+         let check = true;
+         let index_first = 0;
+         let index_last = str.length-1;
+         while (index_first<index_last){
+             if (str[index_first] !== str[index_last]){
+                 check = false;
+                 break;
+             }
+             index_first++;
+             index_last--;
+         }
+         if (check){
+             alert("Chuỗi đối xứng");
+         } else {
+             alert("Chuỗi không đối xứng");
+         }
+     }
+     let str = prompt("Nhập chuỗi muốn kiểm tra");
+     checkStr(str);
+</script>
+</body>
+</html>
