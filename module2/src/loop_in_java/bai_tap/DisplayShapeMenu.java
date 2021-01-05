@@ -2,7 +2,7 @@ package loop_in_java.bai_tap;
 
 import java.util.Scanner;
 
-public class DisplayShape {
+public class DisplayShapeMenu {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);
@@ -43,6 +43,7 @@ public class DisplayShape {
                         }
                         System.out.println();
                     }
+                    break;
                 case 3:
                     for (int i = 1; i <=15; i ++){
                         for (int j = 1; j <=i; j ++){
@@ -53,6 +54,11 @@ public class DisplayShape {
                         }
                         System.out.println();
                     }
+                    break;
+                case 0:
+                    System.exit(0);
+                default:
+                    System.out.println("No choice!");
             }
         }
     }
