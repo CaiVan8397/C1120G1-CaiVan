@@ -1,6 +1,6 @@
 package inheritance.bai_tap.class_triangle;
 
-import inheritance.thuc_hanh.shape.Shape;
+import inheritance.thuc_hanh.Shape;
 
 public class Triangle extends Shape {
     private double side1 = 1.0;

@@ -1,16 +1,16 @@
-package inheritance.thuc_hanh.shape;
+package inheritance.thuc_hanh;
 
-public class Cricle extends Shape {
+public class Circle extends Shape {
     private double radius = 0;
 
-    public Cricle() {
+    public Circle() {
     }
 
-    public Cricle(double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 
-    public Cricle(String color, boolean filled, double radius) {
+    public Circle(String color, boolean filled, double radius) {
         super(color, filled);
         this.radius = radius;
     }
@@ -36,7 +36,7 @@ public class Cricle extends Shape {
 
 
     public static void main(String[] args) {
-        Cricle cricle = new Cricle("blue", false, 5);
+        Circle cricle = new Circle("blue", false, 5);
         System.out.println(cricle);
     }
 }

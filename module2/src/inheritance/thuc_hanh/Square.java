@@ -1,4 +1,4 @@
-package inheritance.thuc_hanh.shape;
+package inheritance.thuc_hanh;
 
 public class Square extends Rectangle {
 

@@ -20,9 +20,8 @@ public class Student {
     void display() {
         System.out.println(rollno + " " + name + " " + college);
     }
-}
-class TestStaticMethod {
-    public static void main(String args[]) {
+
+    public static void main(String[] args) {
         Student.change(); //calling change method
 
         //creating objects

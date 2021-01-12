@@ -1,4 +1,4 @@
-package inheritance.thuc_hanh.shape;
+package inheritance.thuc_hanh;
 
 public class Rectangle extends Shape {
     private double width = 1.0;

@@ -1,13 +1,13 @@
 package inheritance.bai_tap.class_cricel_clinder;
 
-public class Cricle {
+public class Circle {
     private double radius;
     private String color;
 
-    public Cricle(){
+    public Circle(){
     }
 
-    public Cricle(double radius, String color) {
+    public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
@@ -43,7 +43,7 @@ public class Cricle {
     }
 
     public static void main(String[] args) {
-        Cricle c = new Cricle(10,"pink");
+        Circle c = new Circle(10,"pink");
         System.out.println(c);
         System.out.println("Area = " + c.getArea());
         System.out.println("Perimeter = " + c.getPerimeter());

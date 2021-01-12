@@ -1,6 +1,6 @@
 package inheritance.bai_tap.class_cricel_clinder;
 
-public class Cylinder extends  Cricle{
+public class Cylinder extends Circle {
     private double hight;
 
     public Cylinder(){
