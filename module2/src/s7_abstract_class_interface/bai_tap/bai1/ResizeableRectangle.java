@@ -16,6 +16,6 @@ public class ResizeableRectangle extends Rectangle implements Resizeable {
 
     @Override
     public void resize(double percent) {
-
+        System.out.println(this.getArea() * (1 + percent/100 ));
     }
 }

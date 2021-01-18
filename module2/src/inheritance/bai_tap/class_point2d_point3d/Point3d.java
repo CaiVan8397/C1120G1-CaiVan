@@ -42,7 +42,7 @@ public class Point3d extends Point2d{
     }
 
     public static void main(String[] args) {
-        Point3d bb = new Point3d(10,20,30);
-        System.out.println(bb);
+        Point3d point3d = new Point3d(10,20,30);
+        System.out.println(point3d);
     }
 }

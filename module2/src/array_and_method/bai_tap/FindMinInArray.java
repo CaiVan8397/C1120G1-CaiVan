@@ -11,7 +11,7 @@ public class FindMinInArray {
             System.out.print("Enter a size:");
             size = input.nextInt();
             if (size < 0)
-                System.out.println("Tray again!!!");
+                System.out.println("Try again!!!");
         } while (size < 0);
         myArr = new int[size];
         for (int i=0; i < myArr.length; i++){

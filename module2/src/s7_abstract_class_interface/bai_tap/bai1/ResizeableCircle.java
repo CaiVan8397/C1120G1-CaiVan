@@ -16,6 +16,6 @@ public class ResizeableCircle extends Circle implements Resizeable{
 
     @Override
     public void resize(double percent) {
-
+        System.out.println(this.getAre() * (1 + percent/100 ));
     }
 }
