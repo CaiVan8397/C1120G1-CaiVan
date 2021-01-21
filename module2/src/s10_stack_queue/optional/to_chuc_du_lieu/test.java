@@ -28,6 +28,7 @@ public class test {
         for (DanhSach ds : danhSach) {
             if (ds.isGender()=="Nam") {
                 nam.add(ds);
+
             } else {
                 nu.add(ds);
             }
