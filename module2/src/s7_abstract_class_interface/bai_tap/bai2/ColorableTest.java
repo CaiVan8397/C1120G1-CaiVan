@@ -1,8 +1,8 @@
 package s7_abstract_class_interface.bai_tap.bai2;
 
-import inheritance.thuc_hanh.Circle;
-import inheritance.thuc_hanh.Rectangle;
-import inheritance.thuc_hanh.Shape;
+import s6_inheritance.thuc_hanh.Circle;
+import s6_inheritance.thuc_hanh.Rectangle;
+import s6_inheritance.thuc_hanh.Shape;
 
 public class ColorableTest {
     public static void main(String[] args) {

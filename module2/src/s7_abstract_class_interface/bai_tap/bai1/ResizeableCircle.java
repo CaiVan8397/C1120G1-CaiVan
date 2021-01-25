@@ -1,6 +1,6 @@
 package s7_abstract_class_interface.bai_tap.bai1;
 
-import inheritance.thuc_hanh.Circle;
+import s6_inheritance.thuc_hanh.Circle;
 
 public class ResizeableCircle extends Circle implements Resizeable{
     public ResizeableCircle() {

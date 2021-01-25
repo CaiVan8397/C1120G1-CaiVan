@@ -1,6 +1,6 @@
 package s7_abstract_class_interface.thuc_hanh.interface_comparator;
 
-import inheritance.thuc_hanh.Circle;
+import s6_inheritance.thuc_hanh.Circle;
 
 import java.util.Arrays;
 import java.util.Comparator;

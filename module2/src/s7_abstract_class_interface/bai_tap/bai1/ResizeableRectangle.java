@@ -1,6 +1,6 @@
 package s7_abstract_class_interface.bai_tap.bai1;
 
-import inheritance.thuc_hanh.Rectangle;
+import s6_inheritance.thuc_hanh.Rectangle;
 
 public class ResizeableRectangle extends Rectangle implements Resizeable {
     public ResizeableRectangle() {
