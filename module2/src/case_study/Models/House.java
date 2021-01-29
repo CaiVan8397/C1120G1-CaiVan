@@ -1,24 +1,20 @@
 package case_study.Models;
 
-public class Villa extends Services {
+public class House extends Services {
     protected String typeRoom;
     protected String equipment;
-    protected String acreagePool;
     protected int floor;
 
-    public Villa(String typeRoom, String equipment, String acreagePool, int floor) {
+    public House(String typeRoom, String equipment, int floor) {
         this.typeRoom = typeRoom;
         this.equipment = equipment;
-        this.acreagePool = acreagePool;
         this.floor = floor;
     }
 
-    public Villa(String id, String serviceName, double acreage, double cost, int numberPeople, String rentalType,
-                 String typeRoom, String equipment, String acreagePool, int floor) {
+    public House(String id, String serviceName, double acreage, double cost, int numberPeople, String rentalType, String typeRoom, String equipment, int floor) {
         super(id, serviceName, acreage, cost, numberPeople, rentalType);
         this.typeRoom = typeRoom;
         this.equipment = equipment;
-        this.acreagePool = acreagePool;
         this.floor = floor;
     }
 
@@ -38,14 +34,6 @@ public class Villa extends Services {
         this.equipment = equipment;
     }
 
-    public String getAcreagePool() {
-        return acreagePool;
-    }
-
-    public void setAcreagePool(String acreagePool) {
-        this.acreagePool = acreagePool;
-    }
-
     public int getFloor() {
         return floor;
     }
@@ -56,15 +44,21 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return "Villa: " +
-                "typeRoom: " + typeRoom + '\'' +
-                ", equipment: " + equipment + '\'' +
-                ", acreagePool: " + acreagePool + '\'' +
-                ", floor: " + floor;
+        return "House{" +
+                "typeRoom='" + typeRoom + '\'' +
+                ", equipment='" + equipment + '\'' +
+                ", floor=" + floor +
+                ", id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", acreage=" + acreage +
+                ", cost=" + cost +
+                ", numberPeople=" + numberPeople +
+                ", rentalType='" + rentalType + '\'' +
+                '}';
     }
 
     @Override
     public String showInfor() {
-        return super.toString() + ", " + typeRoom + ", " + equipment + ", " + acreagePool + ", " + floor;
+        return  super.toString() + ", " + typeRoom + ", " + equipment + ", " + floor;
     }
 }

@@ -67,10 +67,6 @@ public abstract class Services {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
-    public static void accompanyingService(boolean massage, boolean food, boolean karaoke, boolean drink, boolean car){
-    }
-    public static void showInfor(){
-    }
 
     @Override
     public String toString() {
@@ -82,4 +78,6 @@ public abstract class Services {
                 ", numberPeople: " + numberPeople +
                 ", rentalType: " + rentalType ;
     }
+
+    public abstract String showInfor();
 }
