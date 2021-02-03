@@ -21,6 +21,14 @@ public class Villa extends Services {
         this.acreagePool = acreagePool;
         this.floor = floor;
     }
+//    public Villa(String[] villaInfo) {
+//        super(villaInfo[0], villaInfo[1], Double.parseDouble(villaInfo[2]),
+//                Double.parseDouble(villaInfo[3]), Integer.parseInt(villaInfo[4]), villaInfo[5]);
+//        this.typeRoom = villaInfo[6];
+//        this.equipment = villaInfo[7];
+//        this.acreagePool =villaInfo[8];
+//        this.floor = Integer.parseInt(villaInfo[9]);
+//    }
 
     public String getTypeRoom() {
         return typeRoom;
@@ -56,15 +64,16 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return "Villa: " +
-                "typeRoom: " + typeRoom + '\'' +
-                ", equipment: " + equipment + '\'' +
-                ", acreagePool: " + acreagePool + '\'' +
-                ", floor: " + floor;
+        return super.toString() + "," + this.typeRoom + "," + this.equipment + "," + this.acreagePool +
+                "," + this.floor;
     }
 
     @Override
     public String showInfor() {
-        return super.toString() + ", " + typeRoom + ", " + equipment + ", " + acreagePool + ", " + floor;
+        return "Villa { " + "\n" + super.showInfor() + "\n" +
+                "Type room: " + this.typeRoom  +
+                ", Other equipment: " + this.equipment + "\n" +
+                "Acreage of pool: " + this.acreagePool +
+                ", Number of floor: " + this.floor + "}";
     }
 }

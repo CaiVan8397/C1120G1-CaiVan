@@ -11,6 +11,11 @@ public class Room extends Services{
         super(id, serviceName, acreage, cost, numberPeople, rentalType);
         this.freeService = freeService;
     }
+//    public Room(String[] roomInfo) {
+//        super(roomInfo[0], roomInfo[1], Double.parseDouble(roomInfo[2]),
+//                Double.parseDouble(roomInfo[3]), Integer.parseInt(roomInfo[4]), roomInfo[5]);
+//        this.freeService = roomInfo[6];
+//    }
 
     public String getFreeService() {
         return freeService;
@@ -22,19 +27,13 @@ public class Room extends Services{
 
     @Override
     public String toString() {
-        return "Room{" +
-                "id='" + id + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", acreage=" + acreage +
-                ", cost=" + cost +
-                ", numberPeople=" + numberPeople +
-                ", rentalType='" + rentalType + '\'' +
-                ", freeService='" + freeService + '\'' +
-                '}';
+        return super.toString() + "," + this.freeService;
     }
 
     @Override
     public String showInfor() {
-        return super.toString() + ", " + freeService;
+        return "Room { " + super.showInfor() + "\n" +
+                "FreeService: " + getFreeService() + "}";
     }
+
 }

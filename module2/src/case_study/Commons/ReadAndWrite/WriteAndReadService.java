@@ -1,4 +1,4 @@
-package case_study.Commons;
+package case_study.Commons.ReadAndWrite;
 
 import case_study.Models.House;
 import case_study.Models.Room;
@@ -8,10 +8,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriteAndRead {
+public class WriteAndReadService {
     static final String VILLA_PATH = "src/case_study/Data/Villa.csv";
-    static final String HOUSE_PATH = "src/data/House.csv";
-    static final String ROOM_PATH = "src/data/Room.csv";
+    static final String HOUSE_PATH = "src/case_study/Data/House.csv";
+    static final String ROOM_PATH = "src/case_study/Data/Room.csv";
 
     public static void serviceWriteFile(Object service) {
         if (service instanceof Villa) {
@@ -41,12 +41,13 @@ public class WriteAndRead {
         try {
             FileReader fileReader = new FileReader( "src/case_study/Data/Villa.csv" );
             BufferedReader bufferedReader = new BufferedReader( fileReader );
-            String line="";
-            String[] arrayFile=null;
+            String line;
+            String[] arrayFile;
             while ((line = bufferedReader.readLine()) != null) {
-                arrayFile = line.split( ", " );
-                Villa villa = new Villa( arrayFile[0], arrayFile[1], Double.parseDouble(arrayFile[2]), Integer.parseInt(arrayFile[3]),
-                        Integer.parseInt(arrayFile[4]), arrayFile[5], arrayFile[6], arrayFile[7], arrayFile[8], Integer.parseInt(arrayFile[9]));
+                arrayFile = line.split( "," );
+                Villa villa = new Villa( arrayFile[0], arrayFile[1], Double.parseDouble(arrayFile[2]),
+                        Double.parseDouble(arrayFile[3]), Integer.parseInt(arrayFile[4]), arrayFile[5],
+                        arrayFile[6], arrayFile[7], arrayFile[8], Integer.parseInt(arrayFile[9]));
                 villaList.add(villa);
             }
         } catch (IOException e) {
@@ -58,14 +59,14 @@ public class WriteAndRead {
     public static List<House> readHouse() {
         List<House> houseList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader( "src/case_study/Data/Room.csv" );
+            FileReader fileReader = new FileReader( "src/case_study/Data/House.csv" );
             BufferedReader bufferedReader = new BufferedReader( fileReader );
             String line;
             String[] arrayFile;
             while ((line = bufferedReader.readLine()) != null) {
-                arrayFile = line.split( ", " );
-                House house = new House( arrayFile[0], arrayFile[1],Double.parseDouble(arrayFile[2]),
-                        Integer.parseInt(arrayFile[3]), Integer.parseInt(arrayFile[4]), arrayFile[5],
+                arrayFile = line.split( "," );
+                House house = new House( arrayFile[0], arrayFile[1], Double.parseDouble(arrayFile[2]),
+                        Double.parseDouble(arrayFile[3]), Integer.parseInt(arrayFile[4]), arrayFile[5],
                         arrayFile[6], arrayFile[7], Integer.parseInt(arrayFile[8]));
                 houseList.add(house);
             }
@@ -78,14 +79,14 @@ public class WriteAndRead {
     public static List<Room> readRoom() {
         List<Room> roomList = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader( "src/case_study/Data/Villa.csv" );
+            FileReader fileReader = new FileReader( "src/case_study/Data/Room.csv" );
             BufferedReader bufferedReader = new BufferedReader( fileReader );
             String line;
             String[] arrayFile;
             while ((line = bufferedReader.readLine()) != null) {
-                arrayFile = line.split( ", " );
-                Room room = new Room( arrayFile[0], arrayFile[1], Double.parseDouble(arrayFile[2]), Integer.parseInt(arrayFile[3]),
-                        Integer.parseInt(arrayFile[4]), arrayFile[5], arrayFile[6]);
+                arrayFile = line.split( "," );
+                Room room = new Room(arrayFile[0], arrayFile[1], Double.parseDouble(arrayFile[2]),
+                        Double.parseDouble(arrayFile[3]), Integer.parseInt(arrayFile[4]), arrayFile[5], arrayFile[6]);
                 roomList.add(room);
             }
         } catch (IOException e) {

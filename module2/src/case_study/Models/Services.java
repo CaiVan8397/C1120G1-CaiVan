@@ -70,14 +70,16 @@ public abstract class Services {
 
     @Override
     public String toString() {
-        return "Information of Services{" +
-                "id: " + id  +
-                ", serviceName: " + serviceName + '\'' +
-                ", acreage: " + acreage +
-                ", cost: " + cost +
-                ", numberPeople: " + numberPeople +
-                ", rentalType: " + rentalType ;
+        return getId() + "," + getServiceName() + "," + getAcreage() + "," + getCost() + "," + getNumberPeople() +
+                "," + getRentalType();
     }
 
-    public abstract String showInfor();
+    public String showInfor(){
+        return "ServiceId: " + getId() +
+                ", serviceName: " + getServiceName() + "\n" +
+                "Acreage: " + getAcreage() +
+                ", Cost: " + getCost() + "\n" +
+                "Number People: " + getNumberPeople() +
+                ", Rental Type: " + getRentalType();
+    }
 }
