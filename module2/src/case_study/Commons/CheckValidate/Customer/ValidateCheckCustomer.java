@@ -33,8 +33,6 @@ public class ValidateCheckCustomer {
         return genderString.matches( "(Male|Female|Unknown)" );
     }
 
-
-
     public static boolean regexEmailCustomer(String email) {
         return email.matches( "^[a-z0-9]+@[a-z]+\\.[a-z]+" );
     }
