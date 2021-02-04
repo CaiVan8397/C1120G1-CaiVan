@@ -1,4 +1,4 @@
-package case_study.Commons.CustomerSort;
+package case_study.Commons.Comparator;
 
 import case_study.Models.Customer;
 

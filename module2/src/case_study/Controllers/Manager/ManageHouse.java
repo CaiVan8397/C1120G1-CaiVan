@@ -1,12 +1,11 @@
 package case_study.Controllers.Manager;
 
 import case_study.Commons.CheckValidate.Service.ValidateCheckService;
+import case_study.Commons.Comparator.CompareHouse;
 import case_study.Commons.ReadAndWrite.WriteAndReadService;
 import case_study.Models.House;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ManageHouse {
     static Scanner scanner = new Scanner(System.in);
@@ -32,7 +31,7 @@ public class ManageHouse {
         }while (true);
         double acreage;
         do {
-            System.out.println("Enter acreage of house: ");
+            System.out.println("Enter acreage of house (Bigger than 0): ");
             acreage = Double.parseDouble(scanner.nextLine());
             if (acreage > 0){
                 break;
@@ -41,7 +40,7 @@ public class ManageHouse {
         }while (true);
         double cost;
         do {
-            System.out.println("Enter cost of house : ");
+            System.out.println("Enter cost of house (Bigger than 0): ");
             cost = Double.parseDouble(scanner.nextLine());
             if (ValidateCheckService.feeValid(Double.parseDouble(String.valueOf(cost)))){
                 break;
@@ -59,7 +58,7 @@ public class ManageHouse {
         }while (true);
         String rentalType;
         do {
-            System.out.println("Enter type of rent: ");
+            System.out.println("Enter type of rent (By Day|Hour|Week - capitalize first letter): ");
             rentalType = scanner.nextLine();
             if (ValidateCheckService.regexName(rentalType)){
                 break;
@@ -68,7 +67,7 @@ public class ManageHouse {
         }while (true);
         String typeRoom;
         do {
-            System.out.println("Enter type of house: ");
+            System.out.println("Enter type of house (capitalize first letter): ");
             typeRoom = scanner.nextLine();
             if (ValidateCheckService.regexName(typeRoom)){
                 break;
@@ -102,6 +101,19 @@ public class ManageHouse {
         List <House> list = WriteAndReadService.readHouse();
         for (int i=0; i<list.size(); i++) {
             System.out.println((1+i)+ ". "+ list.get(i).showInfor());
+        }
+    }
+
+    public static TreeSet <House> findAllNotDuplicateNameHouse(){
+        List<House> houseList = WriteAndReadService.readHouse();
+        TreeSet<House> houseTreeSet = new TreeSet<>(new CompareHouse());
+        houseTreeSet.addAll(houseList);
+        return houseTreeSet;
+    }
+    public static void showAllServiceNotDuplicateHouse(){
+        TreeSet<House> houseTreeSet = findAllNotDuplicateNameHouse();
+        for (House house : houseTreeSet) {
+            System.out.println(house.getServiceName());
         }
     }
 }

@@ -9,6 +9,7 @@ public class MainController {
     public static void displayMainMenu(){
         boolean flag = true;
         while (flag){
+            System.out.println("**** WELCOME TO FURAMA RESORT ****");
             System.out.println("1.\tAdd New Services\n" +
                     "2.\tShow Services\n" +
                     "3.\tAdd New Customer\n" +
@@ -59,6 +60,7 @@ public class MainController {
     public static void addNewService(){
        boolean flag = true;
        while (flag){
+           System.out.println("---- ADD NEW SERVICE ----");
            System.out.println("1.\tAdd New Villa\n" +
                    "2.\tAdd New House\n" +
                    "3.\tAdd New Room\n" +
@@ -92,6 +94,7 @@ public class MainController {
     public static void showServices() {
         boolean flag = true;
         while (flag) {
+            System.out.println("---- SHOW SERVICE ----");
             System.out.println("1.\tShow all Villa\n" +
                     "2.\tShow all House\n" +
                     "3.\tShow all Room\n" +
@@ -113,10 +116,13 @@ public class MainController {
                     ManageRoom.showRoom();
                     break;
                 case 4:
+                    ManageVilla.showAllServiceNotDuplicateVilla();
                     break;
                 case 5:
+                    ManageHouse.showAllServiceNotDuplicateHouse();
                     break;
                 case 6:
+                    ManageRoom.showAllServiceNotDuplicateRoom();
                     break;
                 case 7:
                     displayMainMenu();

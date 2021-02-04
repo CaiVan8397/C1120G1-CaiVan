@@ -19,7 +19,7 @@ public class ManageEmployee {
         employeeList.add(new Employee("008", "Le Thi L", 28, "48 Nguyen Huu Tho"));
         employeeList.add(new Employee("009", "Nguyen Ho M", 27, "278 Nguyen Huu Tho"));
         employeeList.add(new Employee("010", "Ly Tieu Long", 26, "378 Nguyen Huu Tho"));
-        WriteAndReadEmployee.writeEmployee(employeeList,true);
+        WriteAndReadEmployee.writeEmployee(employeeList,false);
     }
 
     //Sử dụng Map
@@ -34,7 +34,6 @@ public class ManageEmployee {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
-
     //Sử dụng stack
     public static Stack<Employee>  saveEmployeeInStack(){
         Stack<Employee> employeeStack = new Stack<>();

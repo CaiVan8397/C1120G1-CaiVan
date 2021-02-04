@@ -1,12 +1,16 @@
 package case_study.Controllers.Manager;
 
 import case_study.Commons.CheckValidate.Service.ValidateCheckService;
+import case_study.Commons.Comparator.CompareHouse;
+import case_study.Commons.Comparator.CompareVilla;
 import case_study.Commons.ReadAndWrite.WriteAndReadService;
+import case_study.Models.House;
 import case_study.Models.Villa;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class ManageVilla {
     static Scanner  scanner = new Scanner(System.in);
@@ -32,7 +36,7 @@ public class ManageVilla {
         }while (true);
         double acreage;
         do {
-            System.out.println("Enter acreage of villa: ");
+            System.out.println("Enter acreage of villa (Double number bigger than 0): ");
             acreage = Double.parseDouble(scanner.nextLine());
             if (acreage > 0){
                 break;
@@ -41,7 +45,7 @@ public class ManageVilla {
         }while (true);
         double cost;
         do {
-            System.out.println("Enter cost of villa : ");
+            System.out.println("Enter cost of villa (Double number bigger than 0): ");
             cost = Double.parseDouble(scanner.nextLine());
             if (ValidateCheckService.feeValid(Double.parseDouble(String.valueOf(cost)))){
                 break;
@@ -59,7 +63,7 @@ public class ManageVilla {
         }while (true);
         String rentalType;
         do {
-            System.out.println("Enter type of rent: ");
+            System.out.println("Enter type of rent (By Day|Hour|Week - capitalize first letter): ");
             rentalType = scanner.nextLine();
             if (ValidateCheckService.regexName(rentalType)){
                 break;
@@ -68,7 +72,7 @@ public class ManageVilla {
         }while (true);
         String typeRoom;
         do {
-            System.out.println("Enter type of villa: ");
+            System.out.println("Enter type of villa (capitalize first letter): ");
             typeRoom = scanner.nextLine();
             if (ValidateCheckService.regexName(typeRoom)){
                 break;
@@ -111,6 +115,18 @@ public class ManageVilla {
         List <Villa> villaList = WriteAndReadService.readVilla();
         for (int i=0; i<villaList.size(); i++) {
             System.out.println((1+i)+ ". "+ villaList.get(i).showInfor());
+        }
+    }
+    public static TreeSet <Villa> findAllNotDuplicateNameVilla(){
+        List <Villa> villaList = WriteAndReadService.readVilla();
+        TreeSet<Villa> villaTreeSet = new TreeSet <>(new CompareVilla());
+        villaTreeSet.addAll(villaList);
+        return villaTreeSet;
+    }
+    public static void showAllServiceNotDuplicateVilla(){
+        TreeSet<Villa> villaTreeSet = findAllNotDuplicateNameVilla();
+        for (Villa villa : villaTreeSet) {
+            System.out.println(villa.getServiceName());
         }
     }
 }

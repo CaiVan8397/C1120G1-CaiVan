@@ -1,7 +1,7 @@
 package case_study.Controllers.Manager;
 
 import case_study.Commons.CheckValidate.Customer.ValidateCheckCustomer;
-import case_study.Commons.CustomerSort.CustomerSort;
+import case_study.Commons.Comparator.CustomerSort;
 import case_study.Commons.Exception.*;
 import case_study.Commons.ReadAndWrite.WriteAndReadCustomer;
 import case_study.Models.Customer;
@@ -21,7 +21,7 @@ public class ManageCustomer {
         String address;
         do {
             try {
-                System.out.println( "Enter Name Customer: " );
+                System.out.println( "Enter Name Customer (capitalize first letter): " );
                 nameCustomer = scanner.nextLine();
                 if (ValidateCheckCustomer.regexName( nameCustomer )) {
                     break;
@@ -102,7 +102,7 @@ public class ManageCustomer {
 
         } while (true);
         do {
-            System.out.println( "Enter address customer" );
+            System.out.println( "Enter address customer (capitalize first letter):" );
             address = scanner.nextLine();
             if (ValidateCheckCustomer.regexAddress( address )) {
                 break;
@@ -122,7 +122,7 @@ public class ManageCustomer {
             System.err.println("There is no data to display");
         } else {
             int count = 1;
-            Collections.sort(customerList, new CustomerSort());
+            customerList.sort(new CustomerSort());
             for (Customer customer : customerList) {
                 System.out.println(count++ + ". " + customer.showInfor());
 

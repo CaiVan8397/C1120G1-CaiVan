@@ -58,12 +58,4 @@ public class ManageBooking {
         listBooking.add(booking);
         WriteAndReadBooking.writeBooking(listBooking,true);
     }
-
-//    public static void showBooking(){
-//        List <Booking> list = WriteAndReadBooking.readBooking();
-//        int count = 1;
-//        for (Booking booking : list){
-//            System.out.println(count++ + booking.showInfor());
-//        }
-//    }
 }

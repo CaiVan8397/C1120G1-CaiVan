@@ -1,12 +1,16 @@
 package case_study.Controllers.Manager;
 
 import case_study.Commons.CheckValidate.Service.ValidateCheckService;
+import case_study.Commons.Comparator.CompareRoom;
+import case_study.Commons.Comparator.CompareVilla;
 import case_study.Commons.ReadAndWrite.WriteAndReadService;
+import case_study.Models.Room;
 import case_study.Models.Room;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class ManageRoom {
     static Scanner scanner = new Scanner(System.in);
@@ -32,7 +36,7 @@ public class ManageRoom {
         }while (true);
         double acreage;
         do {
-            System.out.println("Enter acreage of room ");
+            System.out.println("Enter acreage of room (Double number bigger than 0)");
             acreage = Double.parseDouble(scanner.nextLine());
             if (acreage > 0){
                 break;
@@ -41,7 +45,7 @@ public class ManageRoom {
         }while (true);
         double cost;
         do {
-            System.out.println("Enter cost of room : ");
+            System.out.println("Enter cost of room(Bigger than 0): ");
             cost = Double.parseDouble(scanner.nextLine());
             if (ValidateCheckService.feeValid(Double.parseDouble(String.valueOf(cost)))){
                 break;
@@ -59,7 +63,7 @@ public class ManageRoom {
         }while (true);
         String rentalType;
         do {
-            System.out.println("Enter type of rent: ");
+            System.out.println("Enter type of rent (capitalize first letter): ");
             rentalType = scanner.nextLine();
             if (ValidateCheckService.regexName(rentalType)){
                 break;
@@ -87,6 +91,18 @@ public class ManageRoom {
         List <Room> list = WriteAndReadService.readRoom();
         for (int i=0; i<list.size(); i++) {
             System.out.println((1+i)+ ". "+ list.get(i).showInfor());
+        }
+    }
+    public static TreeSet<Room> findAllNotDuplicateNameRoom(){
+        List <Room> roomList = WriteAndReadService.readRoom();
+        TreeSet<Room> roomTreeSet = new TreeSet <>(new CompareRoom());
+        roomTreeSet.addAll(roomList);
+        return roomTreeSet;
+    }
+    public static void showAllServiceNotDuplicateRoom(){
+        TreeSet<Room> roomTreeSet = findAllNotDuplicateNameRoom();
+        for (Room room : roomTreeSet) {
+            System.out.println(room.getServiceName());
         }
     }
 }

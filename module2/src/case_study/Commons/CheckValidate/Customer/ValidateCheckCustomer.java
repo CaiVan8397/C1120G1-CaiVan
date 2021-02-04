@@ -37,17 +37,10 @@ public class ValidateCheckCustomer {
         return email.matches( "^[a-z0-9]+@[a-z]+\\.[a-z]+" );
     }
 
-
-
     public static boolean regexTypeOfCustomer(String typeOfCustomer) {
         return typeOfCustomer.matches( "(Diamond|Platinum|Gold|Silver|Member)" );
     }
-
-
-
     public static boolean regexAddress(String address){
         return address.matches( "[A-Z][a-z]+([ ][A-Z][a-z]+)*" );
     }
-
-
 }
