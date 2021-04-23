@@ -113,9 +113,12 @@ public class ManageVilla {
 
     public static void showVilla(){
         List <Villa> villaList = WriteAndReadService.readVilla();
-        for (int i=0; i<villaList.size(); i++) {
-            System.out.println((1+i)+ ". "+ villaList.get(i).showInfor());
-        }
+        if (villaList.size()!=0) {
+            for (int i = 0; i < villaList.size(); i++) {
+                System.out.println((1 + i) + ". " + villaList.get(i).showInfor());
+            }
+        }else
+            System.err.println("List villa is empty, please add new villa service!!!");
     }
     public static TreeSet <Villa> findAllNotDuplicateNameVilla(){
         List <Villa> villaList = WriteAndReadService.readVilla();

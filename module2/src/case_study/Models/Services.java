@@ -76,10 +76,10 @@ public abstract class Services {
 
     public String showInfor(){
         return "ServiceId: " + getId() +
-                ", serviceName: " + getServiceName() + "\n" +
-                "Acreage: " + getAcreage() +
-                ", Cost: " + getCost() + "\n" +
-                "Number People: " + getNumberPeople() +
+                ", serviceName: " + getServiceName()  +
+                ", Acreage: " + getAcreage() +
+                ", Cost: " + getCost() +
+                ", Number People: " + getNumberPeople() +
                 ", Rental Type: " + getRentalType();
     }
 }

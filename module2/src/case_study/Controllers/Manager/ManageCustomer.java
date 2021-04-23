@@ -119,7 +119,7 @@ public class ManageCustomer {
     public static void showInformationCustomer() {
         List<Customer> customerList = WriteAndReadCustomer.customerRead();
         if (customerList.isEmpty()) {
-            System.err.println("There is no data to display");
+            System.err.println("There is no customer to display, please add new customer");
         } else {
             int count = 1;
             customerList.sort(new CustomerSort());

@@ -89,8 +89,12 @@ public class ManageRoom {
 
     public static void showRoom(){
         List <Room> list = WriteAndReadService.readRoom();
-        for (int i=0; i<list.size(); i++) {
-            System.out.println((1+i)+ ". "+ list.get(i).showInfor());
+        if (list.size() !=0) {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((1 + i) + ". " + list.get(i).showInfor());
+            }
+        }else {
+            System.err.println("List room is empty, please add new room service!!!");
         }
     }
     public static TreeSet<Room> findAllNotDuplicateNameRoom(){

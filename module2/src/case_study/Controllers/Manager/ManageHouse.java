@@ -99,9 +99,12 @@ public class ManageHouse {
 
     public static void showHouse(){
         List <House> list = WriteAndReadService.readHouse();
-        for (int i=0; i<list.size(); i++) {
-            System.out.println((1+i)+ ". "+ list.get(i).showInfor());
-        }
+        if (list.size() != 0) {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((1 + i) + ". " + list.get(i).showInfor());
+            }
+        } else
+            System.err.println("List house  is empty, please add new house service!!!");
     }
 
     public static TreeSet <House> findAllNotDuplicateNameHouse(){

@@ -1,7 +1,7 @@
 package tham_khao.ManagerProduct.src.service;
 
 import tham_khao.ManagerProduct.src.common.FuncWriteAndRead;
-import model.Product;
+import tham_khao.ManagerProduct.src.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

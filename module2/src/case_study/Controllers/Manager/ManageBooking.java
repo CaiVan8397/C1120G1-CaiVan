@@ -19,20 +19,35 @@ public class ManageBooking {
         int chooseCus;
         do {
             System.out.println("Enter to choose number of customer");
-            chooseCus = Integer.parseInt(scanner.nextLine());
-            if (!(chooseCus <= 0) || chooseCus-1 >= listCustomer.size()) {
-                break;
+            try {
+                chooseCus = Integer.parseInt(scanner.nextLine());
+                if ((chooseCus > 0 && chooseCus <= listCustomer.size())) {
+                    break;
+                }
+                System.err.println("Please choose number 1 to " + listCustomer.size());
+            }catch (NumberFormatException e){
+                System.err.println(" Error !!!");
             }
-            System.err.println("Please choose number 1 to " + listCustomer.size());
         }while (true);
         booking.setNameCustomer(listCustomer.get(chooseCus-1).getCustomerName());
         booking.setCustomerIdNumber(listCustomer.get(chooseCus-1).getCustomerIdNumber());
-        System.out.println("1. Booking Villa\n" +
-                "2. Booking House\n" +
-                "3. Booking Room\n" +
-                "4. Exit\n" +
-                "Select one service you want to book: ");
-        int chooseService = Integer.parseInt(scanner.nextLine());
+        int chooseService;
+        do {
+            System.out.println("1. Booking Villa\n" +
+                    "2. Booking House\n" +
+                    "3. Booking Room\n" +
+                    "4. Exit\n" +
+                    "Select one service you want to book: ");
+            try {
+                chooseService = Integer.parseInt(scanner.nextLine());
+                if ((chooseService > 0 && chooseService <= 3)) {
+                    break;
+                }
+                System.err.println("Please choose number 1 to 3");
+            } catch (NumberFormatException e) {
+                System.err.println(" Error !!!");
+            }
+        }while (true);
         switch (chooseService){
             case 1:
                 List <Villa> listVilla = WriteAndReadService.readVilla();

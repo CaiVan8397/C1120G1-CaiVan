@@ -1,6 +1,6 @@
 package tham_khao.ManagerProduct.src.common;
 
-import model.Product;
+import tham_khao.ManagerProduct.src.model.Product;
 
 import java.io.*;
 import java.util.ArrayList;

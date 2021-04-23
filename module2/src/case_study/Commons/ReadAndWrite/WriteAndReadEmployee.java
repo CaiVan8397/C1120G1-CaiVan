@@ -1,6 +1,5 @@
 package case_study.Commons.ReadAndWrite;
 
-import case_study.Models.Booking;
 import case_study.Models.Employee;
 
 import java.io.*;

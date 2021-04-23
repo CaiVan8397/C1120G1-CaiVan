@@ -32,8 +32,8 @@ public class Room extends Services{
 
     @Override
     public String showInfor() {
-        return "Room { " + super.showInfor() + "\n" +
-                "FreeService: " + getFreeService() + "}";
+        return "Room { " + super.showInfor() +
+                ", FreeService: " + getFreeService() + "}";
     }
 
 }

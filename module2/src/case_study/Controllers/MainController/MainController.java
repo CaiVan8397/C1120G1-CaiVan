@@ -9,7 +9,7 @@ public class MainController {
     public static void displayMainMenu(){
         boolean flag = true;
         while (flag){
-            System.out.println("**** WELCOME TO FURAMA RESORT ****");
+            System.out.println("**** WELCOME TO FUrRAMA RESORT ****");
             System.out.println("1.\tAdd New Services\n" +
                     "2.\tShow Services\n" +
                     "3.\tAdd New Customer\n" +
@@ -19,8 +19,13 @@ public class MainController {
                     "7.\tFind an Employee by ID\n" +
                     "8.\tCinema 4D\n" +
                     "9.\tExit\n " +
-                    "Select option:\n");
-            int chooseMenu = scanner.nextInt();
+                    "Select option: ");
+            int chooseMenu = 0;
+                try{
+                    chooseMenu = Integer.parseInt(scanner.nextLine());
+                }catch (NumberFormatException e){
+                    System.err.println("Enter number");
+                }
             switch (chooseMenu){
                 case 1:
                     addNewService();
@@ -66,8 +71,13 @@ public class MainController {
                    "3.\tAdd New Room\n" +
                    "4.\tBack to menu\n" +
                    "5.\tExit\n" +
-                   "Select service:\n");
-           int chooseService = scanner.nextInt();
+                   "Select service:");
+           int chooseService = 0;
+           try{
+               chooseService = Integer.parseInt(scanner.nextLine());
+           }catch (NumberFormatException e){
+               System.err.println("Enter number");
+           }
            switch (chooseService){
                case 1:
                    ManageVilla.addNewVilla();
@@ -104,7 +114,12 @@ public class MainController {
                     "7.\tBack to menu\n" +
                     "8.\tExit\n" +
                     "Select option: \n");
-            int chooseShow = scanner.nextInt();
+            int chooseShow = 0;
+            try{
+                chooseShow = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("Enter number");
+            }
             switch (chooseShow) {
                 case 1:
                     ManageVilla.showVilla();

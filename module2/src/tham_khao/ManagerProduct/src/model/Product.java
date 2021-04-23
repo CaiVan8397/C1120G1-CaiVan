@@ -1,4 +1,4 @@
-package model;
+package tham_khao.ManagerProduct.src.model;
 
 public class Product {
     private String id;

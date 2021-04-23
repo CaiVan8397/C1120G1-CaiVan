@@ -129,12 +129,11 @@ public class Customer {
     public String showInfor() {
         return "Customer{" +
                 "Name:" + this.customerName +
-                ", Birthday: " + this.customerBirthday + "\n" +
-                "customer: " + this.customerGender  +
-                ", IdNumber: " + this.customerIdNumber + "\n" +
-                "Phone: "  + this.customerPhone +
-                ", Email: " + this.customerEmail + "\n" +
-                "customer Type: " + this.customerType +
+                ", Birthday: " + this.customerBirthday +
+                ", Customer: " + this.customerGender  +
+                ", IdNumber: " + this.customerIdNumber +
+                ", Phone: "  + this.customerPhone +
+                ", Customer Type: " + this.customerType +
                 ", Address: " + this.customerAddress +
                 '}';
     }

@@ -70,10 +70,10 @@ public class Villa extends Services {
 
     @Override
     public String showInfor() {
-        return "Villa {  " +  super.showInfor() + "\n" +
-                "Type room: " + this.typeRoom  +
-                ", Other equipment: " + this.equipment + "\n" +
-                "Acreage of pool: " + this.acreagePool +
+        return "Villa {  " +  super.showInfor() +
+                ", Type room: " + this.typeRoom  +
+                ", Other equipment: " + this.equipment +
+                ", Acreage of pool: " + this.acreagePool +
                 ", Number of floor: " + this.floor + "}";
     }
 }
